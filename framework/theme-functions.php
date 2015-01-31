@@ -122,9 +122,9 @@ function set_container() {
     if (is_singular() && pts_has_shortcode('vc_row') && get_page_template_slug()!='') {
 		$set_container = pts_main_wrap();
     }
-    elseif(is_product()){
+    /*elseif(is_product()){
         $set_container = pts_main_wrap();
-    }
+    }*/
     elseif(get_page_temp() == 'default' && pts_has_shortcode('vc_row')){
         $set_container = 'row';
     }

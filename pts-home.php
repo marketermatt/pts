@@ -4,12 +4,6 @@
  */
 ?>
 <?php get_header();
-
-// lets get the column sections for the homepage done
-if(ot_get_option('pts_enable_homepage_sections')=='on')
-{
-    echo homepage_colums();
-}
 ?>
 <div class="container-wrap">
     <div class="<?php echo set_container(); ?>">
