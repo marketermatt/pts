@@ -842,7 +842,7 @@ function custom_theme_options()
                 'condition' => 'pts_enable_homepage_sections:is(on)',
                 'operator' => 'and'
             ),
-            array(
+            /*array(
                 'id' => 'pts_footer_color_theme',
                 'label' => __('Footer Color theme', PTS_DOMAIN),
                 'desc' => '',
@@ -868,7 +868,7 @@ function custom_theme_options()
                         'src' => ''
                     )
                 )
-            ),
+            ),*/
             array(
                 'id' => 'pts_copyright_info',
                 'label' => __('Copyright Info', PTS_DOMAIN),

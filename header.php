@@ -53,8 +53,8 @@
         </div>
     </div>
     <div id="header-bottom">
-        <div class="container">
-            <div class="branding-menu col-xs-12 col-sm-12 col-md-10">
+        <div class="container no-15">
+            <div class="branding-menu col-xs-12 col-sm-12 col-md-9 no-15">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
                         <span class="sr-only">Toggle navigation</span>
@@ -76,8 +76,10 @@
                     ?>
                 </div>
             </div>
-            <div class="hidden-xs col-sm-12 col-md-2">
-                I am here
+            <div class="hidden-xs col-sm-12 col-md-3">
+                <div class="shopping-cart">
+                    <a href="#">Shopping Cart(0)</a>
+                </div>
             </div>
         </div>
     </div>

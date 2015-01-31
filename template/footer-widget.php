@@ -1,5 +1,5 @@
 <?php if(ot_get_option('pts_footer_widget_on_off')=='on'): ?>
-<div class="container">
+<div class="container footer-widgets">
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3">
             <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('first_footer_widget')): ?>
