@@ -43,12 +43,13 @@ a:hover{
     min-height: 500px;
 }
 
-.static-image-narrow img{
+.static-image-narrow img, .static-image-full img{
     width: 100% !important;
     height: auto;
 }
 
 #footer-area{
     background: #1f1f1f;
-    border-top: 5px solid #ff000;
+    border-top: 5px solid #ff0000;
+    min-height: 100px;
 }

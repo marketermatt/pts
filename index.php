@@ -1,11 +1,5 @@
 <?php get_header(); ?>
 <div class="container-wrap">
-    <div class="container-fluid borderbottom">
-        <div class="page-excerpt container">
-            <h3><?php echo single_cat_title(); ?></h3>
-            <?php pts_breadcrumbs(); ?>
-        </div>
-    </div>
 
     <?php if(ot_get_option('pts_archive_page_width')=='1'){ ?>
         <div class="<?php echo set_container(); ?>">

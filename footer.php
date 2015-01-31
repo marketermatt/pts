@@ -1,4 +1,4 @@
-<div class="footer-area">
+<div id="footer-area">
     <div class="container-fluid <?php echo ot_get_option('pts_footer_color_theme'); ?>">
         <?php get_template_part('template/footer','widget'); ?>
     </div>
