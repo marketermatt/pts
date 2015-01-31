@@ -154,7 +154,7 @@ function custom_theme_options()
                 'condition' => '',
                 'operator' => 'and'
             ),
-            array(
+            /*array(
                 'id' => 'pts_main_menu_color',
                 'label' => __('Main Menu Color', PTS_DOMAIN),
                 'desc' => '',
@@ -168,7 +168,7 @@ function custom_theme_options()
                 'class' => '',
                 'condition' => '',
                 'operator' => 'and'
-            ),
+            ),*/
             array(
                 'id' => 'pts_main_menu_color_hover',
                 'label' => __('Main Menu Color (:hover)', PTS_DOMAIN),
