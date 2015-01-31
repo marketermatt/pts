@@ -54,7 +54,31 @@
     </div>
     <div id="header-bottom">
         <div class="container">
-            The menu area
+            <div class="branding-menu col-xs-12 col-sm-12 col-md-10">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <?php
+                        $args = array(
+                            'theme_location' => 'main',
+                            'container' => 'div',
+                            'container_class' => 'collapse navbar-collapse head-nav',
+                            'container_id' => 'navigationbar',
+                            'menu_class' => 'nav navbar-nav',
+                            'walker'=>new wp_pts_navwalker()
+                        );
+                        echo wp_nav_menu($args);
+                    ?>
+                </div>
+            </div>
+            <div class="hidden-xs col-sm-12 col-md-2">
+                I am here
+            </div>
         </div>
     </div>
 </div>

@@ -46,7 +46,6 @@ a:hover{
 }
 
 #header-area #header-bottom{
-    min-height: 65px;
     background: #cb0101;
 }
 
@@ -138,4 +137,9 @@ a:hover{
     border-right: 0;
     margin-right: 0;
     padding-right: 0;
+}
+
+
+#navigationbar{
+    width: auto;
 }

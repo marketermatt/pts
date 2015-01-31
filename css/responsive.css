@@ -2,7 +2,20 @@
 
 }
 @media(min-width:768px) and (max-width:991px){
+    #navigationbar{
+        margin:0 0 0;
+        width:100%;
+    }
+    #navigationbar{
+        text-align:center;
+    }
 
+    #navigationbar ul li{
+        display:inline-block;
+        position: relative;
+        /* float: left; */
+        margin:0 5px;
+    }
 }
 @media(min-width:992px) and (max-width:1199px){}
 @media(min-width:1200px){}
