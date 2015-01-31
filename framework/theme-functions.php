@@ -134,138 +134,6 @@ function set_container() {
     }
     return $set_container;
 }
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return '.ot_get_option('pts_shop_achive_count').';' ), 20 );
-
-function pts_product_download_link($prod_id) {
-    $downloadables = get_post_meta( $prod_id, '_downloadable_files' );
-    $link = array();
-    foreach($downloadables[0] as $dl)
-    {
-        $link[] = $dl['file'];
-    }
-
-    return $link;
-}
-
-function pts_product_add_meta_box() {
-
-	$screens = array( 'product' );
-
-	foreach ( $screens as $screen ) {
-
-		add_meta_box(
-			'myplugin_sectionid',
-			__( 'Product View Controls', PTS_DOMAIN ),
-			'pts_product_meta_box_callback',
-			$screen
-		);
-	}
-}
-add_action( 'add_meta_boxes', 'pts_product_add_meta_box' );
-
-/**
- * Prints the box content.
- *
- * @param WP_Post $post The object for the current post/page.
- */
-function pts_product_meta_box_callback( $post ) {
-
-	// Add an nonce field so we can check for it later.
-	wp_nonce_field( 'pts_product_meta_box', 'pts_product_meta_box_nonce' );
-
-	/*
-	 * Use get_post_meta() to retrieve an existing value
-	 * from the database and use the value for the form.
-	 */
-	$revslider = get_post_meta( $post->ID, '_pts_revslider_extra', true );
-	$sampleurl = get_post_meta( $post->ID, '_pts_preview_url', true );
-
-	echo '<label for="pts_rev_slider">';
-	_e( 'Revolution Slider', PTS_DOMAIN );
-	echo '</label> ';
-	echo '<input type="text" id="pts_rev_slider" name="pts_rev_slider" value="' . esc_attr( $revslider ) . '" size="25" />';
-
-    echo '<br/>';
-
-    echo '<label for="pts_sample">';
-	_e( 'Preview URL', PTS_DOMAIN );
-	echo '</label> ';
-	echo '<input type="text" id="pts_sample" name="pts_sample" value="' . esc_attr( $sampleurl ) . '" size="25" />';
-}
-
-function pts_product_meta_box_save( $post_id ) {
-
-	// Check if our nonce is set.
-	if ( ! isset( $_POST['pts_product_meta_box_nonce'] ) ) {
-		return;
-	}
-
-	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['pts_product_meta_box_nonce'], 'pts_product_meta_box' ) ) {
-		return;
-	}
-
-	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-
-	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
-
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
-
-	} else {
-
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-	}
-
-	/* OK, it's safe for us to save the data now. */
-
-	// Make sure that it is set.
-	/*if ( ! isset( $_POST['pts_rev_slider'] ) ) {
-		return;
-	}*/
-
-	// Sanitize user input.
-	$revs = sanitize_text_field( $_POST['pts_rev_slider'] );
-	$urlsamp = sanitize_text_field( $_POST['pts_sample'] );
-
-	// Update the meta field in the database.
-	update_post_meta( $post_id, '_pts_revslider_extra', $revs );
-	update_post_meta( $post_id, '_pts_preview_url', $urlsamp );
-}
-add_action( 'save_post', 'pts_product_meta_box_save' );
-
-function shop_prod_meta(){
-        global $post, $product;
-        $cat_count = sizeof( get_the_terms( $post->ID, 'product_cat' ) );
-            $tag_count = sizeof( get_the_terms( $post->ID, 'product_tag' ) );
-		?>
-        <div class="row text-center" style="margin-bottom:30px; font-size:10px;">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-	<?php do_action( 'woocommerce_product_meta_start' ); ?>
-	<?php if ( wc_product_sku_enabled() && ( $product->get_sku() || $product->is_type( 'variable' ) ) ) : ?>
-
-		<span class="sku_wrapper"><?php _e( 'SKU:', 'woocommerce' ); ?> <span class="sku" itemprop="sku"><?php echo ( $sku = $product->get_sku() ) ? $sku : __( 'N/A', 'woocommerce' ); ?></span>.</span>
-
-	<?php endif; ?>
-
-	<?php echo $product->get_categories( ', ', '<span class="posted_in">' . _n( 'Category:', 'Categories:', $cat_count, 'woocommerce' ) . ' ', '.</span>' ); ?>
-
-	<?php echo $product->get_tags( ', ', '<span class="tagged_as">' . _n( 'Tag:', 'Tags:', $tag_count, 'woocommerce' ) . ' ', '.</span>' ); ?>
-
-	<?php do_action( 'woocommerce_product_meta_end' ); ?>
-
-</div>
-</div>
-            <?php }
-
-
 
 function theme_excerpts(){
     if(!is_cart() || !is_checkout() || !is_account_page() || !is_page('cart')){
@@ -274,21 +142,6 @@ function theme_excerpts(){
     else{
         return;
     }
-}
-
-add_filter( 'woocommerce_checkout_fields' , 'addBootstrapToCheckoutFields' );
-
-function addBootstrapToCheckoutFields($fields) {
-foreach ($fields as &$fieldset) {
-  foreach ($fieldset as &$field) {
-    // if you want to add the form-group class around the label and the input
-    $field['class'][] = 'form-group';
-
-    // add form-control to the actual input
-    $field['input_class'][] = 'form-control';
-  }
-}
-return $fields;
 }
 
 
@@ -503,29 +356,6 @@ if(!function_exists('pts_breadcrumbs')) {
 
       }
     }
-}
-
-
-if(!function_exists('pts_top_cart')) {
-	function pts_top_cart() {
-        global $woocommerce;
-		?>
-			<div class="shopping-area hidden-sm hidden-xs">
-				<div class="shopping-cart-widget" id='basket'>
-					<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>" class="cart-summ" data-items-count="<?php echo $woocommerce->cart->cart_contents_count; ?>">
-					<div class="cart-bag">
-						<i class='ico-sum'></i>
-						<span class="badge-number"><?php echo $woocommerce->cart->cart_contents_count; ?></span>
-					</div>
-
-						<span class='shop-text'><?php _e('Cart', PTS_DOMAIN) ?>:</span> <span class="total"><?php echo $woocommerce->cart->get_cart_subtotal(); ?></span>
-					</a>
-				</div>
-
-
-			</div>
-    <?php
-	}
 }
 
 ?>

@@ -7,6 +7,15 @@
 function pts_widget_init() {
 
     register_sidebar( array(
+		'name' => 'Top Widget',
+		'id' => 'top_widget',
+		'before_widget'  => '<div id="%1$s" class="%2$s top-widgs">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+
+    register_sidebar( array(
 		'name' => 'Sidebar Widget',
 		'id' => 'sidebar_widget',
 		'before_widget'  => '<div id="%1$s" class="%2$s sidebar-widgs">',

@@ -191,3 +191,15 @@ function get_page_temp($pid=''){
     $return = get_post_meta( $pid, '_wp_page_template', TRUE );
     return $return;
 }
+
+function pts_change_search_widget( $html ) {
+    ob_start(); ?>
+    <form role="search" method="get" action="<?php echo esc_url( home_url() ); ?>" class="search-form form-inline">
+        <div class="form-group">
+            <input type="text" value="<?php echo get_search_query(); ?>" name="s" placeholder="<?php _e( 'Enter your keyword', 'pts' ); ?>" class="form-control" />
+            <button class="btn btn-danger btn-fill searchnow" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </form>
+    <?php return ob_get_clean();
+}
+add_filter( 'get_search_form', 'pts_change_search_widget' );

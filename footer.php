@@ -1,5 +1,12 @@
+<div id="top-footer-ads">
+    <div class="container-fluid no-15">
+        <div class="container">
+            This area is for the sales advert masonry area
+        </div>
+    </div>
+</div>
 <div id="footer-area">
-    <div class="container-fluid <?php echo ot_get_option('pts_footer_color_theme'); ?>">
+    <div class="container-fluid <?php echo ot_get_option('pts_footer_color_theme'); ?>" style="min-height:100px;">
         <?php get_template_part('template/footer','widget'); ?>
     </div>
     <div class="clearfix"></div>

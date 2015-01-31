@@ -469,9 +469,9 @@ function custom_theme_options()
             ),
             array(
                 'id' => 'pts_menu_margin_top',
-                'label' => __('Top Margin for Main Menu', PTS_DOMAIN),
+                'label' => __('Top margin for top widget area', PTS_DOMAIN),
                 'desc' => 'Enter margin in px',
-                'std' => '0',
+                'std' => '20',
                 'type' => 'text',
                 'section' => 'header',
                 'rows' => '',

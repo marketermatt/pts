@@ -19,6 +19,8 @@ a:hover{
     text-decoration: none !important;
 }
 
+.form-control, .btn { border-radius: 0; -webkit-appearance: none; }
+
 .full-fluid{
     padding: 0 !important;
     margin: 0 !important;
@@ -31,7 +33,16 @@ a:hover{
 
 #header-area #header-top{
     min-height: 115px;
-    background: #cdcdcd;
+    background: URL('../images/Layer_15.png') repeat #fff;
+}
+
+#logo-area{
+    padding: 20px 0;
+}
+
+#logo-area img{
+    max-width: width: 100%;
+    height: auto;
 }
 
 #header-area #header-bottom{
@@ -48,8 +59,83 @@ a:hover{
     height: auto;
 }
 
+#top-footer-ads{
+    border-top: 5px solid #ccc;
+}
+
 #footer-area{
     background: #1f1f1f;
     border-top: 5px solid #ff0000;
     min-height: 100px;
+}
+
+#footer-area .copyright-area{
+    background: #000000;
+}
+
+#top-widget{
+    min-width: 200px;
+    min-height: 20px;
+    float: right;
+}
+
+#top-widget label.screen-reader-text{
+    display: none;
+}
+
+#top-widget .form-control, #top-widget .btn{
+    padding: 5px 8px;
+    height: auto;
+    font-size: 11px !important;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#top-widget .btn{
+    padding: 4px 8px;
+    margin-left: -4px;
+}
+
+#top-widget .search {
+    border: 0 !important;
+}
+
+#top-widget .top-widgs{
+    float: left;
+}
+
+#top-widget .widget_nav_menu .menu:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#top-widget .widget_nav_menu{
+    margin: 0 10px;
+    background: #636363;
+    padding: 0 10px;
+}
+
+#top-widget .widget_nav_menu ul{
+    list-style: none;
+    list-style-image: none;
+    padding:0;
+    margin: 3px 0 !important;
+}
+
+#top-widget .widget_nav_menu ul li{
+    float: left;
+}
+
+#top-widget .widget_nav_menu ul li a{
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: 1px solid #ccc;
+    font-size: 11px;
+}
+
+#top-widget .widget_nav_menu ul li:last-child a{
+    border-right: 0;
+    margin-right: 0;
+    padding-right: 0;
 }

@@ -38,7 +38,18 @@
 <div class="container-fluid" id="header-area">
     <div id="header-top">
         <div class="container">
-            Logo and stuff here
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <a href="<?php echo home_url(); ?>">
+                        <?php pts_get_logo(); ?>
+                    </a>
+                </div>
+                <div class="hidden-xs col-sm-8 col-md-8">
+                    <div id="top-widget">
+                        <?php if ( function_exists('dynamic_sidebar') && dynamic_sidebar('top_widget') ) : else : ?><?php endif; ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div id="header-bottom">
