@@ -278,30 +278,6 @@ function custom_theme_options()
                 'operator' => 'and'
             ),
             array(
-                'id' => 'pts_body_font',
-                'label' => __('Body Font', PTS_DOMAIN),
-                'desc' => '',
-                'std' => array(
-                    'font-color' => '#141414',
-                    'font-family' => 'open_sans',
-                    'font-size' => '13px',
-                    'font-weight' => '300',
-                    'font-style' => 'normal',
-                    'letter-spacing' => 'normal',
-                    'line-height' => '21px',
-                    'text-transform' => 'none'
-                ),
-                'type' => 'typography',
-                'section' => 'typo',
-                'rows' => '',
-                'post_type' => '',
-                'taxonomy' => '',
-                'min_max_step' => '',
-                'class' => '',
-                'condition' => '',
-                'operator' => 'and'
-            ),
-            array(
                 'id' => 'pts_h1',
                 'label' => __('H1', PTS_DOMAIN),
                 'desc' => '',

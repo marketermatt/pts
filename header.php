@@ -34,69 +34,22 @@
     ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="main">
-    <?php if(ot_get_option('pts_enable_top_bar')=='on'){ ?>
-    <div class="section-top hidden-sm hidden-xs">
-        <div class="container">
-            <div class="row">
-                <div class="top-left">
-                    <?php echo do_shortcode(ot_get_option('pts_slider_top_menu_left')); ?>
-                </div>
 
-                <ul class="nav navbar-nav top-nav">
-                    <?php
-                    $args = array(
-                        'theme_location' => 'top',
-                        'container' => false,
-                        /*'menu_class' => 'nav navbar-nav top-nav',*/
-                        'items_wrap' => '%3$s'
-                    );
-                    echo wp_nav_menu($args);
-                    echo top_social_section();
-                    ?>
-                </ul>
-            </div>
+<div class="container-fluid" id="header-area">
+    <div id="header-top">
+        <div class="container">
+            Logo and stuff here
         </div>
     </div>
-    <?php } ?>
-    <div class="section-menu">
+    <div id="header-bottom">
         <div class="container">
-            <div class="row">
-                <div class="branding-menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <a href="<?php echo home_url(); ?>"><?php
-                        pts_get_logo();
-                    ?></a>
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-
-                    <?php if(class_exists('Woocommerce')): ?>
-				        <?php pts_top_cart(); ?>
-				    <?php endif ;?>
-
-                    <?php
-                    $args = array(
-                        'theme_location' => 'main',
-                        'container' => 'div',
-                        'container_class' => 'collapse navbar-collapse head-nav',
-                        'container_id' => 'navigationbar',
-                        'menu_class' => 'nav navbar-nav',
-                        'walker'=>new wp_pts_navwalker()
-                    );
-                    echo wp_nav_menu($args);
-                    ?>
-                </div>
-            </div>
+            The menu area
         </div>
     </div>
-    <?php if(is_front_page()): ?>
+</div>
+<?php if(is_front_page()): ?>
         <div class="container-fluid full-fluid">
-            <?php get_template_part(trailingslashit(FRAMEWORK_FOLDER).'slider-structure', ot_get_option('pts_slider_area')); ?>
+            <?php get_template_part('template/slider-structure', ot_get_option('pts_slider_area')); ?>
         </div>
-    <?php endif; ?>
+<?php endif; ?>
+

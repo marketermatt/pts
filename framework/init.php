@@ -47,5 +47,5 @@ require_once( trailingslashit(PTS_CODE_DIR). 'enqueues/js.php');
 require_once( trailingslashit(PTS_CODE_DIR). 'image_handler.php' );
 require_once( trailingslashit(PTS_CODE_DIR). 'widgets.php' );
 require_once( trailingslashit(PTS_CODE_DIR). 'vc.php' );
-require_once( trailingslashit(PTS_CODE_DIR). 'plugins.php' );
 require_once( trailingslashit(PTS_CODE_DIR). 'required-plugins.php' );
+require_once( trailingslashit(PTS_CODE_DIR). 'class-tgm-plugin-activation.php' );

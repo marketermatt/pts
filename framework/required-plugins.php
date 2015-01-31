@@ -1,5 +1,9 @@
 <?php
 
+
+require_once (trailingslashit(PTS_CODE_DIR). 'class-tgm-plugin-activation.php');
+add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+
 function my_theme_register_required_plugins() {
 
     /**
@@ -12,7 +16,7 @@ function my_theme_register_required_plugins() {
         array(
             'name'               => 'Revolution Slider', // The plugin name.
             'slug'               => 'revslider', // The plugin slug (typically the folder name).
-            'source'             => trailingslashit(PARENT_DIR) . 'plugins/revslider.zip', // The plugin source.
+            'source'             => trailingslashit(PARENT_URL) . 'plugins/revslider.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
@@ -23,7 +27,7 @@ function my_theme_register_required_plugins() {
         array(
             'name'               => 'Visual Composer', // The plugin name.
             'slug'               => 'js_composer', // The plugin slug (typically the folder name).
-            'source'             => trailingslashit(PARENT_DIR) . 'plugins/visual-composer.zip', // The plugin source.
+            'source'             => trailingslashit(PARENT_URL) . 'plugins/js_composer.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'version'            => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
             'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.

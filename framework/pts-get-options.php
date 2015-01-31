@@ -21,7 +21,7 @@ if(!function_exists('pts_style_init')) {
         <style type="text/css">
             <?php
                 $sitebackground = ot_get_option('pts_site_bg');
-                if($sitebackground){
+
                 echo 'body{';
                     if(!empty($sitebackground['background-color'])):  echo  'background-color:'. $sitebackground['background-color'].' !important;'; endif;
                     if(!empty($sitebackground['background-image'])):  echo 'background-image: url('.$sitebackground['background-image'].');'; endif;
@@ -30,8 +30,9 @@ if(!function_exists('pts_style_init')) {
                     if(!empty($sitebackground['background-color'])): echo 'background-color:'. $sitebackground['background-color'].';'; endif;
                     if(!empty($sitebackground['background-position'])): echo 'background-position:' . $sitebackground['background-position'].';'; endif;
                     if(ot_get_option('background_cover') == 'enable'): echo 'background-size: cover;'; endif;
+                    echo 'line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.ot_get_option('pts_main_font')['font-family'].';';
                 echo '}';
-                }
+
                 echo 'p{ line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].';}';
                 echo 'a{ font-color:'.ot_get_option('pts_accent_color').';}';
                 echo '.form-holder .search-slider-button{ background:'.ot_get_option('pts_accent_color').' !important;-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;}';

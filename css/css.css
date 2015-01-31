@@ -4,6 +4,10 @@ html{
     overflow-x: hidden;
 }
 
+body{
+    background: #fff;
+}
+
 * {
   -webkit-transition: all 0.4s ease;
   -moz-transition:    all 0.4s ease;
@@ -13,4 +17,38 @@ html{
 
 a:hover{
     text-decoration: none !important;
+}
+
+.full-fluid{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#header-area{
+    min-height: 100px;
+    padding: 0 !important;
+}
+
+#header-area #header-top{
+    min-height: 115px;
+    background: #cdcdcd;
+}
+
+#header-area #header-bottom{
+    min-height: 65px;
+    background: #cb0101;
+}
+
+#slider-area{
+    min-height: 500px;
+}
+
+.static-image-narrow img{
+    width: 100% !important;
+    height: auto;
+}
+
+#footer-area{
+    background: #1f1f1f;
+    border-top: 5px solid #ff000;
 }
