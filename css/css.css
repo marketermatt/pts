@@ -309,3 +309,11 @@ div.rotatingtweet p{
     border-radius: 3px;
     color: #fff;
 }
+
+.breadcrumb-container{
+    background: #000;
+    padding: 10px 0;
+    color: #fff;
+    border-top: 2px solid #fff;
+}
+

@@ -13,8 +13,6 @@ get_header(); ?>
     <div class="container-fluid borderbottom">
         <div class="page-excerpt container">
             <h3><?php echo get_the_title(); ?></h3>
-            <?php pts_breadcrumbs(); ?>
-            <?php echo theme_excerpts(); ?>
         </div>
     </div>
     <div class="container">

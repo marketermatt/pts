@@ -84,6 +84,9 @@
         </div>
     </div>
 </div>
+<?php if(!is_front_page()):
+    get_template_part('template/breadcrumb','index');
+endif; ?>
 <?php if(is_front_page()): ?>
         <div class="container-fluid full-fluid">
             <?php get_template_part('template/slider-structure', ot_get_option('pts_slider_area')); ?>

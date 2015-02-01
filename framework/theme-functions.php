@@ -136,12 +136,13 @@ function set_container() {
 }
 
 function theme_excerpts(){
-    if(!is_cart() || !is_checkout() || !is_account_page() || !is_page('cart')){
+    /*if(!is_cart() || !is_checkout() || !is_account_page() || !is_page('cart')){
         return the_excerpt();
     }
     else{
         return;
-    }
+    }*/
+    return the_excerpt();
 }
 
 
@@ -231,7 +232,7 @@ if(!function_exists('pts_breadcrumbs')) {
     function pts_breadcrumbs() {
 
       $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-      $delimiter = '<span class="delimeter">/</span>'; // delimiter between crumbs
+      $delimiter = '<span class="delimeter">></span>'; // delimiter between crumbs
       $home = __('Home', PTS_DOMAIN); // text for the 'Home' link
       $blogPage = __('Blog', PTS_DOMAIN);
       $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -242,16 +243,9 @@ if(!function_exists('pts_breadcrumbs')) {
       $homeLink = home_url();
       if (is_front_page()) {
 
-        if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
+            if ($showOnHome == 1) echo '<div id="crumbs"><a href="' . $homeLink . '">' . $home . '</a></div>';
 
-	      } else if (class_exists('bbPress') && is_bbpress()) {
-      	$bbp_args = array(
-      		'before' => '<div class="breadcrumbs" id="breadcrumb">',
-      		'after' => '</div>'
-      	);
-      	bbp_breadcrumb($bbp_args);
-      } else {
-        do_action('etheme_before_breadcrumbs');
+    } else {
 
         echo '<div class="breadcrumbs">';
         echo '<div id="breadcrumb">';
@@ -277,15 +271,8 @@ if(!function_exists('pts_breadcrumbs')) {
         } elseif ( is_year() ) {
           echo $before . get_the_time('Y') . $after;
 
-        } elseif ( is_single() && !is_attachment() ) {
-          if ( get_post_type() == 'etheme_portfolio' ) {
-            $portfolioId = etheme_tpl2id('portfolio.php');
-            $portfolioLink = get_permalink($portfolioId);
-            $post_type = get_post_type_object(get_post_type());
-            $slug = $post_type->rewrite;
-            echo '<a href="' . $portfolioLink . '/">' . $post_type->labels->name . '</a>';
-            if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
-          } elseif ( get_post_type() != 'post' ) {
+        } elseif ( is_single() ) {
+            if ( get_post_type() != 'post' ) {
             $post_type = get_post_type_object(get_post_type());
             $slug = $post_type->rewrite;
             echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
