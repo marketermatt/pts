@@ -56,10 +56,10 @@ function custom_theme_options()
                 'id' => 'header',
                 'title' => __('Header', PTS_DOMAIN)
             ),
-            array(
+            /*array(
                 'id' => 'homepage',
                 'title' => __('Homepage', PTS_DOMAIN)
-            ),
+            ),*/
             array(
                 'id' => 'footer',
                 'title' => __('Footer', PTS_DOMAIN)
@@ -81,7 +81,7 @@ function custom_theme_options()
                 'taxonomy' => '',
                 'class' => '',
                 'section' => 'general'
-            ),*/
+            ),
             array(
                 'label' => __('Enable Top Bar', PTS_DOMAIN),
                 'id' => 'pts_enable_top_bar',
@@ -93,7 +93,7 @@ function custom_theme_options()
                 'taxonomy' => '',
                 'class' => '',
                 'section' => 'general'
-            ),
+            ),*/
             array(
                 'id' => 'pts_ga',
                 'label' => __('Google Analytics', PTS_DOMAIN),
@@ -124,7 +124,7 @@ function custom_theme_options()
                 'condition' => '',
                 'operator' => 'and'
             ),
-            array(
+           /* array(
                 'id' => 'pts_top_menu_bg',
                 'label' => __('Top Menu Background Color', PTS_DOMAIN),
                 'desc' => '',
@@ -154,7 +154,7 @@ function custom_theme_options()
                 'condition' => '',
                 'operator' => 'and'
             ),
-            /*array(
+            array(
                 'id' => 'pts_main_menu_color',
                 'label' => __('Main Menu Color', PTS_DOMAIN),
                 'desc' => '',
@@ -602,7 +602,7 @@ function custom_theme_options()
                 'condition' => 'pts_slider_area:is(3)',
                 'operator' => 'and'
             ),
-            array(
+            /*array(
                 'label' => __('Enable Homepage Sections', PTS_DOMAIN),
                 'id' => 'pts_enable_homepage_sections',
                 'type' => 'on-off',
@@ -842,7 +842,7 @@ function custom_theme_options()
                 'condition' => 'pts_enable_homepage_sections:is(on)',
                 'operator' => 'and'
             ),
-            /*array(
+            array(
                 'id' => 'pts_footer_color_theme',
                 'label' => __('Footer Color theme', PTS_DOMAIN),
                 'desc' => '',
@@ -923,7 +923,7 @@ function custom_theme_options()
                 'class' => '',
                 'section' => 'footer'
             ),
-            array(
+            /*array(
                 'id' => 'pts_footer_widgets',
                 'label' => __('Footer Widgets', PTS_DOMAIN),
                 'desc' => '',
@@ -937,7 +937,7 @@ function custom_theme_options()
                 'class' => '',
                 'condition' => 'pts_footer_widget_on_off:is(on)',
                 'operator' => 'and'
-            ),
+            ),*/
             array(
                 'id' => 'pts_custom_css',
                 'label' => __('Custom CSS', PTS_DOMAIN),
@@ -1118,7 +1118,7 @@ function custom_theme_options()
                 'condition'   => '',
                 'operator'    => 'and'
         ),
-        array(
+        /*array(
                 'id' => 'pts_archive_list_type',
                 'label' => __('Archive List type', PTS_DOMAIN),
                 'desc' => '',
@@ -1144,7 +1144,7 @@ function custom_theme_options()
                         'src' => ''
                     )
                 )
-            ),
+            ),*/
             array(
                 'id' => 'pts_archive_page_width',
                 'label' => __('Archive Page Width', PTS_DOMAIN),

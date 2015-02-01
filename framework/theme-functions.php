@@ -22,7 +22,7 @@ function pts_post_type() {
         )
     );
 
-    $labels = array(
+   /* $labels = array(
 		'name'                => _x( 'Projects', 'Post Type General Name', PTS_DOMAIN ),
 		'singular_name'       => _x( 'Project', 'Post Type Singular Name', PTS_DOMAIN ),
 		'menu_name'           => __( 'Projects', PTS_DOMAIN ),
@@ -58,12 +58,12 @@ function pts_post_type() {
         'query_var'           => 'project',
 		'capability_type'     => 'page',
 	);
-	register_post_type( 'pts_project', $args );
+	register_post_type( 'pts_project', $args );*/
 }
 
 add_action( 'after_setup_theme', 'pts_theme_features' );
 function pts_theme_features() {
-    register_nav_menu( 'top', 'Top Menu' );
+    //register_nav_menu( 'top', 'Top Menu' );
     register_nav_menu( 'main', 'Main Menu' );
     register_nav_menu( 'mobile', 'Mobile Menu' );
 
@@ -73,7 +73,7 @@ function pts_theme_features() {
 if ( ! isset( $content_width ) )
 	$content_width = 800;
 
-function homepage_colums(){
+/*function homepage_colums(){
     $elstart = '<div class="row home-colums"><div class="container">';
     $elend = '</div></div>';
         $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-1">
@@ -112,7 +112,7 @@ function homepage_colums(){
         </div>';
 
     return $elstart.$returns.$elend;
-}
+}*/
 
 function pts_main_wrap() {
    return 'container-fluid';

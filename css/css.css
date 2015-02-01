@@ -22,6 +22,7 @@ body{
 
 a:hover{
     text-decoration: none !important;
+    color: #ccc;
 }
 
 .form-control, .btn { border-radius: 0; -webkit-appearance: none; }
@@ -145,6 +146,7 @@ a:hover{
     padding-right: 5px;
     border-right: 1px solid #ccc;
     font-size: 11px;
+    color: #fff !important;
 }
 
 #top-widget .widget_nav_menu ul li:last-child a{
