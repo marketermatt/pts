@@ -68,6 +68,15 @@ function pts_widget_init() {
 		'before_title' => '<h5 class="widgets_titles">',
 		'after_title' => '</h5>',
 	) );
+
+    register_sidebar( array(
+		'name' => 'Footer Right',
+		'id' => 'footer_right',
+		'before_widget'  => '<div id="%1$s" class="%2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 }
 add_action( 'widgets_init', 'pts_widget_init' );
 

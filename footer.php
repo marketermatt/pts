@@ -11,8 +11,15 @@
     </div>
     <div class="clearfix"></div>
     <div class="container-fluid copyright-area">
-        <div>
-            <?php echo do_shortcode(ot_get_option('pts_copyright_info')); ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <?php echo do_shortcode(ot_get_option('pts_copyright_info')); ?>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6" style="text-align:right;">
+                    <?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer_right')): ?><?php endif; ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

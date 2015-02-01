@@ -75,6 +75,15 @@ a:hover{
 
 #footer-area .copyright-area{
     background: #000000;
+    padding: 10px 0;
+    color: #fff;
+}
+
+#footer-area .copyright-area p{
+    color:#fff !important;
+    margin: 0 !important;
+    padding: 7px 0;
+    font-size: 10px;
 }
 
 #top-widget{
@@ -276,4 +285,27 @@ div.rotatingtweet p{
 .shortcode_recent_entries .excerpt{
     color: #fff;
     font-size: 10px;
+}
+
+.ul-vert{
+    list-style: none;
+    list-style-image: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.ul-vert li.social-link{
+    display: inline;
+}
+
+.ul-vert li.social-link a{
+    padding: 10px 12px;
+    width: 35px !important;
+    height: 35px;
+    background: #ab3131;
+    margin-right: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #fff;
 }
