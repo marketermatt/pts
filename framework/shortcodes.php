@@ -151,20 +151,21 @@ function recent_posts_cust($atts)
             $link = get_permalink();
             $title = get_the_title();
             $thumb_id = get_post_thumbnail_id();
-            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'project_thumb', true);
+            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
             $thumb_url = $thumb_url_array[0];
 
             $content .= "<li>";
-            if($a['title']=='yes')
-                $content .= "<a href='$link'>$title</a>";
 
             if($a['image']!='no')
                 $content .= "<a href='$link'><img src='".$thumb_url."'/></a>";
 
             if($a['date']=='yes'){
                 $date = get_the_date();
-                $content .= "<span class='post-date'>".$date."</span>";
+                $content .= "<div class='post-date'>".$date."</div>";
             }
+
+            if($a['title']=='yes')
+                $content .= "<a href='$link'><h6>$title</h6></a>";
 
             if($a['excerpt']=='yes'){
                 $content .= "<p class='excerpt'>" . get_the_excerpt() . "</p>";

@@ -37,7 +37,7 @@ if(!function_exists('pts_style_init')) {
                 echo 'a{ font-color:'.ot_get_option('pts_accent_color').';}';
                 echo '.form-holder .search-slider-button{ background:'.ot_get_option('pts_accent_color').' !important;-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px;}';
         echo '.wpb_accordion_section .ui-state-default{border: 1px solid '.ot_get_option('pts_accent_color').';}';
-                echo '.btn-accent-color, .footer-area .widget_recent_entries .post-date, ul.shortcode_recent_entries .post-date{background-color:'.ot_get_option('pts_accent_color').' !important;}';
+                echo '.btn-accent-color{background-color:'.ot_get_option('pts_accent_color').' !important;}';
                 echo '.borderbottom h3, .wpb_tabs_nav{color:'.ot_get_option('pts_accent_color').' !important;}';
                 if(ot_get_option('pts_top_menu_bg')) { echo '.section-top{background:'.ot_get_option('pts_top_menu_bg').';}'; };
                 if(ot_get_option('pts_top_menu_color')) { echo '.section-top li a{font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).'; color:'.ot_get_option('pts_top_menu_color').'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; font-style:'.ot_get_option('pts_main_font')['font-style'].'; font-variant:'.ot_get_option('pts_main_font')['font-variant'].'; font-weight:'.ot_get_option('pts_main_font')['font-weight'].'; letter-spacing:'.ot_get_option('pts_main_font')['letter-spacing'].'; font-variant:'.ot_get_option('pts_main_font')['font-variant'].'; text-transform:'.ot_get_option('pts_main_font')['text-transform'].';}'; }

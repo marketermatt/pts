@@ -20,8 +20,8 @@ function pts_widget_init() {
 		'id' => 'sidebar_widget',
 		'before_widget'  => '<div id="%1$s" class="%2$s sidebar-widgs">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<div class="widget_title_wrapper"><h4 class="widgets_titles_sidebar">',
-		'after_title' => '</h4></div><div class="wca">',
+		'before_title' => '<div class="widget_title_wrapper"><h5 class="widgets_titles_sidebar">',
+		'after_title' => '</h5></div><div class="wca">',
 	) );
 
     register_sidebar( array(
@@ -29,8 +29,8 @@ function pts_widget_init() {
 		'id' => 'single_post_widget',
 		'before_widget'  => '<div id="%1$s" class="%2$s sidebar-widgs">',
 		'after_widget' => '</div></div>',
-		'before_title' => '<div class="widget_title_wrapper"><h4 class="widgets_titles_sidebar">',
-		'after_title' => '</h4></div><div class="wca">',
+		'before_title' => '<div class="widget_title_wrapper"><h5 class="widgets_titles_sidebar">',
+		'after_title' => '</h5></div><div class="wca">',
 	) );
 
     register_sidebar( array(
@@ -38,8 +38,8 @@ function pts_widget_init() {
 		'id' => 'first_footer_widget',
 		'before_widget'  => '<div id="%1$s" class="footer-widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgets_titles">',
-		'after_title' => '</h4>',
+		'before_title' => '<h5 class="widgets_titles">',
+		'after_title' => '</h5>',
 	) );
 
 	register_sidebar( array(
@@ -47,8 +47,8 @@ function pts_widget_init() {
 		'id' => 'second_footer_widget',
 		'before_widget'  => '<div id="%1$s" class="footer-widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgets_titles">',
-		'after_title' => '</h4>',
+		'before_title' => '<h5 class="widgets_titles">',
+		'after_title' => '</h5>',
 	) );
 
     register_sidebar( array(
@@ -56,8 +56,8 @@ function pts_widget_init() {
 		'id' => 'third_footer_widget',
 		'before_widget'  => '<div id="%1$s" class="footer-widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgets_titles">',
-		'after_title' => '</h4>',
+		'before_title' => '<h5 class="widgets_titles">',
+		'after_title' => '</h5>',
 	) );
 
     register_sidebar( array(
@@ -65,8 +65,8 @@ function pts_widget_init() {
 		'id' => 'fourth_footer_widget',
 		'before_widget'  => '<div id="%1$s" class="footer-widget %2$s">',
 		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgets_titles">',
-		'after_title' => '</h4>',
+		'before_title' => '<h5 class="widgets_titles">',
+		'after_title' => '</h5>',
 	) );
 }
 add_action( 'widgets_init', 'pts_widget_init' );

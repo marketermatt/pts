@@ -168,10 +168,112 @@ a:hover{
 
 .footer-widgets .footer-widget{
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 .wps-deals-mc-subscribe-wrapper{
-    background: #ff0000;
-    height: 150px;
+    background: #ab3131;
     padding: 10px;
+}
+
+.wps-deals-mc-subscribe-email-wrapper:after{
+    content: "It is a long established fact that a reader will be distracted.";
+    padding-top:10px;
+}
+
+.wps-deals-mc-subscribe-wrapper:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.wps-deals-mc-subscribe-email{
+    background-color: #FFFFFF;
+    border: 1px solid #E3E3E3;
+    background: none;
+    border: 1px solid #fff;
+    width: 100%;
+    box-shadow: none;
+    color: #fff !important;
+    height: 38px;
+    padding: 6px 16px;
+    margin-bottom: 10px;
+}
+
+#wps_deals_mc_subscribe_btn{
+    background: #1f1f1f;
+    border: 1px solid #1f1f1f;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+div.rotatingtweets{
+    overflow-y: hidden !important;
+    min-height: 165px !important;
+}
+
+div.rotatingtweet{
+    padding: 10px 15px;
+    background: #141414;
+    color: #fff;
+    overflow-y: visible !important;
+}
+
+div.rotatingtweet:before{
+    position: absolute;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #141414;
+    left: 42%;
+    bottom: -15px;
+    content: '';
+}
+
+div.rotatingtweet:after{
+    position: absolute;
+    bottom: -40px;
+    left: 46%;
+    content: '\f099';
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+div.rotatingtweet p{
+    color: #fff;
+}
+
+.shortcode_recent_entries{
+    list-style: none;
+    list-style-image: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shortcode_recent_entries li{
+    border-bottom: 1px dashed #000;
+}
+
+.shortcode_recent_entries li img{
+    float:left;
+    width: 50px;
+    height: auto;
+    margin: 0 5px 5px 0;
+}
+
+.shortcode_recent_entries .post-date{
+    font-style: italic;
+    font-size: 10px;
+}
+
+.shortcode_recent_entries h6{
+    margin: 0 0 5px 0;
+}
+
+.shortcode_recent_entries .excerpt{
+    color: #fff;
+    font-size: 10px;
 }

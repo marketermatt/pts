@@ -44,14 +44,14 @@ function my_theme_register_required_plugins() {
             'source'             => 'https://s3.amazonaws.com/tgm/tgm-new-media-plugin.zip', // The plugin source.
             'required'           => true, // If false, the plugin is only 'recommended' instead of required.
             'external_url'       => 'https://github.com/thomasgriffin/New-Media-Image-Uploader', // If set, overrides default API URL and points to an external URL.
-        ),
+        ),*/
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
-            'name'      => 'BuddyPress',
-            'slug'      => 'buddypress',
+            'name'      => 'Rotating Tweets (Twitter widget and shortcode)',
+            'slug'      => 'rotatingtweets',
             'required'  => false,
-        ),*/
+        ),
 
     );
 
