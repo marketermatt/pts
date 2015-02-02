@@ -30,12 +30,12 @@ if(!function_exists('pts_style_init')) {
                     if(!empty($sitebackground['background-color'])): echo 'background-color:'. $sitebackground['background-color'].';'; endif;
                     if(!empty($sitebackground['background-position'])): echo 'background-position:' . $sitebackground['background-position'].';'; endif;
                     if(ot_get_option('background_cover') == 'enable'): echo 'background-size: cover;'; endif;
-                    echo 'line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.ot_get_option('pts_main_font')['font-family'].';';
+                    echo 'line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).';';
                 echo '}';
         //end of body area
 
         //begin p tag
-        echo 'p{ line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].';}';
+        echo 'p{ line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).';}';
         //end of p tag
 
         //begin a tag

@@ -101,7 +101,7 @@ if(!function_exists('pts_VC_setup')) {
             }
             else
             {
-                $inner_class = 'container';
+                $inner_class = 'container no-15';
             }
 
 			$style = buildStyle($bg_image, $bg_color, $bg_image_repeat, $font_color, $padding, $margin_bottom, $margin_top);
@@ -456,6 +456,65 @@ if(!function_exists('pts_VC_setup')) {
 	    }
 
 
+        // **********************************************************************//
+	    // ! Register New Element: Popular Deals
+	    // **********************************************************************//
+
+	    $popular_deals_params = array(
+	      'name' => 'Deals',
+	      'base' => 'local_joe_deals',
+	      'icon' => 'icon-wpb-etheme',
+	      'category' => 'Local Joe\'s',
+	      'params' => array(
+	        array(
+	          'type' => 'textfield',
+	          "heading" => __("Widget title", PTS_DOMAIN),
+	          "param_name" => "title",
+	          "description" => __("What text use as a widget title. Leave blank if no title is needed.", PTS_DOMAIN)
+	        ),
+	        array(
+	          "type" => "dropdown",
+	          "heading" => __("Align Title", PTS_DOMAIN),
+	          "param_name" => "align_title",
+	          "value" => array(
+	              "",
+	              __("Float Left", PTS_DOMAIN) => 'left',
+	              __("Float Center", PTS_DOMAIN) => 'center',
+	              __("Float Right", PTS_DOMAIN) => 'right'
+	            )
+	        ),
+            array(
+	          "type" => "dropdown",
+	          "heading" => __("Deals Per Row", PTS_DOMAIN),
+	          "param_name" => "deals_per_row",
+	          "value" => array(
+	              "",
+	              __("1", PTS_DOMAIN) => '1',
+	              __("3", PTS_DOMAIN) => '3',
+	              __("3", PTS_DOMAIN) => '4',
+	              __("4", PTS_DOMAIN) => '6'
+	            )
+	        ),
+            array(
+	          "type" => "dropdown",
+	          "heading" => __("Deal Type", PTS_DOMAIN),
+	          "param_name" => "deal_type",
+	          "value" => array(
+	              "",
+	              __("Popular", PTS_DOMAIN) => '1',
+	              __("New Deals", PTS_DOMAIN) => '2'
+	            )
+	        ),
+            array(
+	          'type' => 'textfield',
+	          "heading" => __("Count", PTS_DOMAIN),
+	          "param_name" => "deal_count",
+	          "description" => __("How many deals to show? Please enter number only.", PTS_DOMAIN)
+	        ),
+	      )
+
+	    );
+	    vc_map($popular_deals_params);
 
 
 

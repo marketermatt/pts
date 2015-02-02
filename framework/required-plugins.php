@@ -52,6 +52,11 @@ function my_theme_register_required_plugins() {
             'slug'      => 'rotatingtweets',
             'required'  => false,
         ),
+        array(
+            'name'      => 'Multi Rating',
+            'slug'      => 'multi-rating',
+            'required'  => true,
+        ),
 
     );
 

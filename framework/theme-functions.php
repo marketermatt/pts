@@ -115,7 +115,7 @@ if ( ! isset( $content_width ) )
 }*/
 
 function pts_main_wrap() {
-   return 'container-fluid';
+   return 'container-fluid no-15';
 }
 
 function set_container() {

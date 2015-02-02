@@ -189,3 +189,67 @@ add_shortcode('cur_year','cur_year_func');
 function cur_year_func(){
     return date('Y');
 }
+
+/***********************************Deals shortcodes***********************************/
+add_shortcode('local_joe_deals','pts_local_joes_shortcode_function');
+function pts_local_joes_shortcode_function($atts, $content = null) {
+    $a = shortcode_atts(array(
+        'title' => 'Deals',
+        'align_title' => 'left',
+        'deals_per_row' => 6,
+        'deal_type' => 2,
+        'deal_count' => 5
+    ),$atts);
+
+    if($a['deals_per_row'] == 6)
+        $deal_class = 'col-xs-12 col-sm-3 col-md-2';
+    if($a['deals_per_row'] == 4)
+        $deal_class = 'col-xs-12 col-sm-4 col-md-3';
+    if($a['deals_per_row'] == 3)
+        $deal_class = 'col-xs-12 col-sm-6 col-md-4';
+    if($a['deals_per_row'] == 1)
+        $deal_class = 'col-xs-12 col-sm-12 col-md-12';
+
+    $title_area = '<h3 style="text-align:'.$a['align_title'].'; margin-top:0; margin-bottom:15px; text-transform:uppercase;" class="deals-shortcode-title">'.$a['title'].'</h3>';
+    $title_area .= '<h6 style="text-align:'.$a['align_title'].'; margin-top:0; margin-bottom:15px; text-transform:uppercase;"><a href="#">VIEW ALL DEALS</a></h6>';
+
+    $args = array(
+        'post_type' => 'wpsdeals'
+    );
+
+    if($a['deal_type'] == 1):
+        $args['meta_key'] = 'pts_post_views_count';
+        $args['orderby'] = 'meta_value_num';
+        $args['order'] = 'DESC';
+    endif;
+
+    if($a['deal_type'] == 2):
+        $args['order'] = 'DESC';
+    endif;
+
+    if($a['deal_type'] != 1 && $a['deal_type'] != 2):
+        $args['order'] = 'DESC';
+    endif;
+
+    if($a['deal_count'] == '')
+        $a['deal_count'] = 5;
+    $args['posts_per_page'] = $a['deal_count'];
+
+    print_r($args);
+
+    $deals = '<div class="row">';
+
+    $the_query = new WP_Query( $args );
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+        $deals .= '<div class="'.$deal_class.' deals-shortcode">';
+        $deals .= 'I am a deal';
+        $deals .= '</div>';
+    endwhile;
+
+    $deals .= '</div>';
+    $output = $title_area;
+    return $output;
+}
+
+
+
