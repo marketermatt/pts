@@ -367,3 +367,141 @@ div.rotatingtweet p{
     border: 1px solid #ccc;
     padding: 0 !important;
 }
+
+
+/* Social Deals Styles */
+
+.blue {
+	background: #4498c7 !important;
+	color: #fff !important;
+	
+}
+
+.black {
+	background: #323035 !important;
+	color: #c6c6c6 !important;
+}
+
+/* resets */
+.deals-row .deals-col-12, .deals-row .deals-more-content .deals-more-price-box {
+	padding: 0px;
+}
+
+/* css */
+.deals-row .deal-image {
+	padding-left: 0px;
+}
+
+.deals-row .deal-image .attachment-new-deal-image {
+	background-color:#fff;
+	border:1px solid #000;
+	padding:1px;
+	width: 750px;
+}
+
+.deals-row .deals-button {
+	border-radius: 0px;
+	float: right;
+	margin-bottom: 20px;
+	
+}
+
+.deals-row .wps-deals-buy-now {
+
+}
+
+.deals-row .deals-button.btn-big, .deals-row .deals-product-btn a, .deals-row .deals-product-btn a:hover {
+	border-radius: 0 0 0 0;
+	background-color: #ce4d38;
+}
+
+.deals-value-single, .deals-discount-single, .deals-save-single {
+	padding: 10px 0;
+}
+
+.deals-row .deals-single-timer {
+	background: #efefef;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.deals-row .deals-available-single, .deals-row .deals-bought-single {
+	background: #4498c7;
+	color: #fff;
+	font-weight: bold;
+	margin: 0 10px;
+	padding: 10px;
+	width: 45%;
+}
+
+.deals-row .deals-single-avail-bought .deals-row {
+	border-bottom: 0px;
+	margin: -10px;
+}
+
+.deals-row .deals-connect {
+	text-align: center;
+}
+
+.deals-row .deals-connect p {
+	padding-bottom: 20px;
+}
+
+.deals-row .deals-connect p a {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.deal-sidebar {
+	list-style: none;
+}
+
+.widget .deals-row {
+	margin: 0;
+}
+
+.deal-sidebar .widgettitle {
+	color: #fff !important;
+	background-color: #212121;
+	font-size: 16px;
+	padding: 20px 15px;
+}
+
+.deal-sidebar .deals-after-title {
+	background-color: #ecc256;
+}
+
+.deal-sidebar .deals-after-title a {
+	color: #000;
+}
+
+.deals-widget .deals-more-content img {
+	height: 50%;
+}
+
+.deals-more-price, .deals-more-price-special, .deals-savings {
+	background: #323035;
+	color: #c6c6c6;
+	padding: 10px 0;
+}
+
+.deals-more-title {
+	background: #efefef;
+}
+
+.deals-more-title {
+	color: #bdae95 !important;
+}
+
+.deals-more-price-box p {
+	padding: 10px;
+	text-align: center;
+}
+
+.deals-timing {
+	margin-right: 100px;
+}
+
+.deals-row .deals-more-content .deals-more-price-box span {
+	color: #fff;
+}
