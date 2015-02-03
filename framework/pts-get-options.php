@@ -22,27 +22,27 @@ if(!function_exists('pts_style_init')) {
             <?php
                 $sitebackground = ot_get_option('pts_site_bg');
 
-                // echo 'body{';
-                    // if(!empty($sitebackground['background-color'])):  echo  'background-color:'. $sitebackground['background-color'].' !important;'; endif;
-                    // if(!empty($sitebackground['background-image'])):  echo 'background-image: url('.$sitebackground['background-image'].');'; endif;
-                    // if(!empty($sitebackground['background-attachment'])):  echo 'background-attachment:'. $sitebackground['background-attachment'].';'; endif;
-                    // if(!empty($sitebackground['background-repeat'])): echo 'background-repeat:'.$sitebackground['background-repeat'].';'; endif;
-                    // if(!empty($sitebackground['background-color'])): echo 'background-color:'. $sitebackground['background-color'].';'; endif;
-                    // if(!empty($sitebackground['background-position'])): echo 'background-position:' . $sitebackground['background-position'].';'; endif;
-                    // if(ot_get_option('background_cover') == 'enable'): echo 'background-size: cover;'; endif;
-                    // echo 'line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).';';
-                // echo '}';
+                 echo 'body{';
+                     if(!empty($sitebackground['background-color'])):  echo  'background-color:'. $sitebackground['background-color'].' !important;'; endif;
+                     if(!empty($sitebackground['background-image'])):  echo 'background-image: url('.$sitebackground['background-image'].');'; endif;
+                     if(!empty($sitebackground['background-attachment'])):  echo 'background-attachment:'. $sitebackground['background-attachment'].';'; endif;
+                     if(!empty($sitebackground['background-repeat'])): echo 'background-repeat:'.$sitebackground['background-repeat'].';'; endif;
+                     if(!empty($sitebackground['background-color'])): echo 'background-color:'. $sitebackground['background-color'].';'; endif;
+                     if(!empty($sitebackground['background-position'])): echo 'background-position:' . $sitebackground['background-position'].';'; endif;
+                     if(ot_get_option('background_cover') == 'enable'): echo 'background-size: cover;'; endif;
+                     echo 'line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).';';
+                 echo '}';
         //end of body area
 
         //begin p tag
-        // echo 'p{ line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).';}';
+         echo 'p{ line-height:'.ot_get_option('pts_main_font')['line-height'].'; font-size:'.ot_get_option('pts_main_font')['font-size'].'; color:'.ot_get_option('pts_main_font')['font-color'].'; font-family:'.pts_get_chosen_google_font(ot_get_option('pts_main_font')['font-family']).';}';
         //end of p tag
 
         //begin a tag
         echo 'a{ color:'.ot_get_option('pts_accent_color').';}';
         //end of a tags
 
-        // all accent color items
+         //all accent color items
         echo '#header-area #header-bottom,
         .ul-vert li.social-link a,
         .wps-deals-mc-subscribe-wrapper{
@@ -61,19 +61,19 @@ if(!function_exists('pts_style_init')) {
         //end all accent color items
 
         //begin menu area
-        // echo '.head-nav .navbar-nav li a,
-        // .shopping-cart{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_menu_font')['font-family']).';
-            // color:'.ot_get_option('pts_menu_font')['font-color'].';
-            // font-size:'.ot_get_option('pts_menu_font')['font-size'].';
-            // font-style:'.ot_get_option('pts_menu_font')['font-style'].';
-            // font-variant:'.ot_get_option('pts_menu_font')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_menu_font')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_menu_font')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_menu_font')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_menu_font')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_menu_font')['text-transform'].';
-        // }';
+         echo '.head-nav .navbar-nav li a,
+         .shopping-cart{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_menu_font')['font-family']).';
+             color:'.ot_get_option('pts_menu_font')['font-color'].';
+             font-size:'.ot_get_option('pts_menu_font')['font-size'].';
+             font-style:'.ot_get_option('pts_menu_font')['font-style'].';
+             font-variant:'.ot_get_option('pts_menu_font')['font-variant'].';
+             font-weight:'.ot_get_option('pts_menu_font')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_menu_font')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_menu_font')['line-height'].';
+             text-decoration:'.ot_get_option('pts_menu_font')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_menu_font')['text-transform'].';
+         }';
 
         echo '.dropdown-menu > li > a, .dropdown-menu > li > a{color:'.ot_get_option('pts_main_menu_color_hover').' !important;}';
         echo '.nav > li > a:hover, .nav > li > a:focus, .nav li.active a{color:'.ot_get_option('pts_main_menu_color_hover').';}';
@@ -94,83 +94,83 @@ if(!function_exists('pts_style_init')) {
         //end top widget area
 
         //begin H1, h2, H3, H4, H5 and H6 tags
-        // echo 'h1{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h1')['font-family']).';
-            // font-size:'.ot_get_option('pts_h1')['font-size'].';
-            // font-color:'.ot_get_option('pts_h1')['font-color'].';
-            // font-style:'.ot_get_option('pts_h1')['font-style'].';
-            // font-variant:'.ot_get_option('pts_h1')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_h1')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_h1')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_h1')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_h1')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_h1')['text-transform'].';
-        // }';
+         echo 'h1{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h1')['font-family']).';
+             font-size:'.ot_get_option('pts_h1')['font-size'].';
+             font-color:'.ot_get_option('pts_h1')['font-color'].';
+             font-style:'.ot_get_option('pts_h1')['font-style'].';
+             font-variant:'.ot_get_option('pts_h1')['font-variant'].';
+             font-weight:'.ot_get_option('pts_h1')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_h1')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_h1')['line-height'].';
+             text-decoration:'.ot_get_option('pts_h1')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_h1')['text-transform'].';
+         }';
 //
-        // echo 'h2{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h2')['font-family']).';
-            // font-size:'.ot_get_option('pts_h2')['font-size'].';
-            // font-color:'.ot_get_option('pts_h2')['font-color'].';
-            // font-style:'.ot_get_option('pts_h2')['font-style'].';
-            // font-variant:'.ot_get_option('pts_h2')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_h2')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_h2')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_h2')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_h2')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_h2')['text-transform'].';
-        // }';
+         echo 'h2{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h2')['font-family']).';
+             font-size:'.ot_get_option('pts_h2')['font-size'].';
+             font-color:'.ot_get_option('pts_h2')['font-color'].';
+             font-style:'.ot_get_option('pts_h2')['font-style'].';
+             font-variant:'.ot_get_option('pts_h2')['font-variant'].';
+             font-weight:'.ot_get_option('pts_h2')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_h2')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_h2')['line-height'].';
+             text-decoration:'.ot_get_option('pts_h2')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_h2')['text-transform'].';
+         }';
 //
-        // echo 'h3{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h3')['font-family']).';
-            // font-size:'.ot_get_option('pts_h3')['font-size'].';
-            // font-color:'.ot_get_option('pts_h3')['font-color'].';
-            // font-style:'.ot_get_option('pts_h3')['font-style'].';
-            // font-variant:'.ot_get_option('pts_h3')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_h3')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_h3')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_h3')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_h3')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_h3')['text-transform'].';
-        // }';
+         echo 'h3{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h3')['font-family']).';
+             font-size:'.ot_get_option('pts_h3')['font-size'].';
+             font-color:'.ot_get_option('pts_h3')['font-color'].';
+             font-style:'.ot_get_option('pts_h3')['font-style'].';
+             font-variant:'.ot_get_option('pts_h3')['font-variant'].';
+             font-weight:'.ot_get_option('pts_h3')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_h3')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_h3')['line-height'].';
+             text-decoration:'.ot_get_option('pts_h3')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_h3')['text-transform'].';
+         }';
 //
-        // echo 'h4{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h4')['font-family']).';
-            // font-size:'.ot_get_option('pts_h4')['font-size'].';
-            // font-color:'.ot_get_option('pts_h4')['font-color'].';
-            // font-style:'.ot_get_option('pts_h4')['font-style'].';
-            // font-variant:'.ot_get_option('pts_h4')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_h4')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_h4')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_h4')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_h4')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_h4')['text-transform'].';
-        // }';
+         echo 'h4{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h4')['font-family']).';
+             font-size:'.ot_get_option('pts_h4')['font-size'].';
+             font-color:'.ot_get_option('pts_h4')['font-color'].';
+             font-style:'.ot_get_option('pts_h4')['font-style'].';
+             font-variant:'.ot_get_option('pts_h4')['font-variant'].';
+             font-weight:'.ot_get_option('pts_h4')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_h4')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_h4')['line-height'].';
+             text-decoration:'.ot_get_option('pts_h4')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_h4')['text-transform'].';
+         }';
 //
-        // echo 'h5{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h5')['font-family']).';
-            // font-size:'.ot_get_option('pts_h5')['font-size'].';
-            // font-color:'.ot_get_option('pts_h5')['font-color'].';
-            // font-style:'.ot_get_option('pts_h5')['font-style'].';
-            // font-variant:'.ot_get_option('pts_h5')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_h5')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_h5')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_h5')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_h5')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_h5')['text-transform'].';
-        // }';
+         echo 'h5{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h5')['font-family']).';
+             font-size:'.ot_get_option('pts_h5')['font-size'].';
+             font-color:'.ot_get_option('pts_h5')['font-color'].';
+             font-style:'.ot_get_option('pts_h5')['font-style'].';
+             font-variant:'.ot_get_option('pts_h5')['font-variant'].';
+             font-weight:'.ot_get_option('pts_h5')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_h5')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_h5')['line-height'].';
+             text-decoration:'.ot_get_option('pts_h5')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_h5')['text-transform'].';
+         }';
 //
-        // echo 'h6{
-            // font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h6')['font-family']).';
-            // font-size:'.ot_get_option('pts_h6')['font-size'].';
-            // font-color:'.ot_get_option('pts_h6')['font-color'].';
-            // font-style:'.ot_get_option('pts_h6')['font-style'].';
-            // font-variant:'.ot_get_option('pts_h6')['font-variant'].';
-            // font-weight:'.ot_get_option('pts_h6')['font-weight'].';
-            // letter-spacing:'.ot_get_option('pts_h6')['letter-spacing'].';
-            // line-height:'.ot_get_option('pts_h6')['line-height'].';
-            // text-decoration:'.ot_get_option('pts_h6')['text-decoration'].';
-            // text-transform:'.ot_get_option('pts_h6')['text-transform'].';
-        // }';
+         echo 'h6{
+             font-family:'.pts_get_chosen_google_font(ot_get_option('pts_h6')['font-family']).';
+             font-size:'.ot_get_option('pts_h6')['font-size'].';
+             font-color:'.ot_get_option('pts_h6')['font-color'].';
+             font-style:'.ot_get_option('pts_h6')['font-style'].';
+             font-variant:'.ot_get_option('pts_h6')['font-variant'].';
+             font-weight:'.ot_get_option('pts_h6')['font-weight'].';
+             letter-spacing:'.ot_get_option('pts_h6')['letter-spacing'].';
+             line-height:'.ot_get_option('pts_h6')['line-height'].';
+             text-decoration:'.ot_get_option('pts_h6')['text-decoration'].';
+             text-transform:'.ot_get_option('pts_h6')['text-transform'].';
+         }';
             ?>
         </style>
         <?php

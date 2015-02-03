@@ -130,7 +130,7 @@ function set_container() {
     }
     else
     {
-        $set_container = 'container no-15';
+        $set_container = 'container-fluid no-15';
     }
     return $set_container;
 }
