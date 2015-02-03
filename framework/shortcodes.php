@@ -235,19 +235,46 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
         $a['deal_count'] = 5;
     $args['posts_per_page'] = $a['deal_count'];
 
-    print_r($args);
-
     $deals = '<div class="row">';
 
     $the_query = new WP_Query( $args );
     while ( $the_query->have_posts() ) : $the_query->the_post();
+
+        ob_start();
+        wps_deals_single_deal_img();
+        $deal_image = ob_get_contents();
+        ob_end_clean();
+
+        global $wps_deals_currency;
+
+        $currency = $wps_deals_currency->currencies;
+        $symbol = $currency->cr_symbol;
+
+        $prefix = WPS_DEALS_META_PREFIX;
+		$normalprice = get_post_meta( get_the_ID(), $prefix.'normal_price', true );
+		$saleprice = get_post_meta( get_the_ID(), $prefix.'sale_price', true );
+
+        $percentage = (($normalprice - $saleprice) / $normalprice) * 100;
+        $percentage = $percentage.'%';
+
         $deals .= '<div class="'.$deal_class.' deals-shortcode">';
-        $deals .= 'I am a deal';
+        $deals .= '<div class="ribbon"><div style="padding:15px; color: #fff; font-weight:bold; font-size:12px;"><span style="color:#f9c205">'.$percentage.'</span> OFF</div></div>';
+        $deals .= $deal_image;
+        $deals .= '<div style="text-align:center;">'.do_shortcode('[display_rating_result post_id="'.get_the_ID().'"]').'</div>';
+        $deals .= '<a href="'.get_permalink(get_the_ID()).'"><h5>'.get_the_title().'</h5></a>';
+        $deals .= '<p>'.get_the_excerpt().'</p>';
+        $deals .= '<div class="price-container">';
+        $deals .= '<div class="oldPrice">'.$wps_deals_currency->currencies['cr_symbol'].$normalprice.'</div>';
+        $deals .= '<div class="salePrice">'.$wps_deals_currency->currencies['cr_symbol'].$saleprice.'</div>';
+        $deals .= '</div>';
+        $deals .= '<div class="clearfix"></div><div style="margin:10px 10px; border-bottom: 1px dashed #ccc; height:5px;"></div>';
+        $deals .= '<a href=""><div class="btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> To Cart</div></a>';
+        $deals .= '<a href=""><div class="btn btn-default btn-fill fa fa-bars" style="margin-right:10px;margin-bottom:10px; font-size:10px; float:right;"> Details</div></a>';
         $deals .= '</div>';
     endwhile;
 
     $deals .= '</div>';
-    $output = $title_area;
+    $output = $title_area.$deals;
     return $output;
 }
 

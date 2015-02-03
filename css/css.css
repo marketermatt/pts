@@ -367,3 +367,52 @@ div.rotatingtweet p{
     border: 1px solid #ccc;
     padding: 0 !important;
 }
+
+.deals-shortcode img{
+    width: 100%;
+    height: auto;
+}
+
+.deals-shortcode h5{
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.deals-shortcode p{
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.deals-shortcode .star-result, .deals-shortcode .count{
+    display: none;
+}
+
+.ribbon{
+    width: 93px;
+    height: 45px;
+    background: URL('../images/ribbon.png') no-repeat;
+    position: absolute;
+    top: 10px;
+    right: -6px;
+}
+
+.deals-shortcode .price-container{
+    padding: 0 10px;
+}
+
+.deals-shortcode .price-container .oldPrice, .deals-shortcode .price-container .salePrice{
+    width: 50%;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+}
+
+.deals-shortcode .oldPrice{
+    width: 40% !important;
+    text-decoration: line-through;
+}
+
+.deals-shortcode .salePrice{
+    font-size: 20px;
+}

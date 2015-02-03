@@ -110,6 +110,7 @@ if(!function_exists('pts_VC_setup')) {
 			$output .= wpb_js_remove_wpautop($content);
 			$output .= '</div>';
 			$output .= '</div>';
+            $output .= '</div>';
 
             return $output;
 	    }
