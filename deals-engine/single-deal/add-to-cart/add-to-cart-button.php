@@ -17,7 +17,7 @@ if ( ! $addcartbtntext ) return;
 global $wps_deals_options;
 ?>
 
-<?php 
+<?php
 if( isset($wps_deals_options['item_quantities']) && !empty($wps_deals_options['item_quantities']) && $wps_deals_options['item_quantities'] == '1') {
 	if($incart) { ?>
 		<input type="hidden" id="deals_id" name="wps_deals_id" class="deals-id" value="<?php echo $dealid;?>" />

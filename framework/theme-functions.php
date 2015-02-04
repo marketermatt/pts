@@ -398,18 +398,18 @@ remove_action( 'wps_deals_single_header_right', 'wps_deals_social_buttons', 20 )
 add_action( 'wps_deals_single_header_left', 'wps_deals_social_buttons', 40 );
 
 // Add sidebar to the single and archive deal pages
-add_action ( 'wps_deals_single_header_left', 'display_single_deal_sidebar', 40);
-add_action ( 'wps_deals_single_header_left', 'display_archive_deal_sidebar', 40 );
+add_action ( 'wps_deals_single_content', 'display_single_deal_sidebar', 12);
+add_action ( 'wps_deals_single_content', 'display_archive_deal_sidebar', 12 );
 
 function display_single_deal_sidebar() { ?>
-	<ul class="deal-sidebar deals-col-12">
+	<ul class="deal-sidebar col-xs-12 col-sm-4 col-md-4 deal-details">
       <?php
       if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('single-deal-sidebar') ); ?>
    </ul>
 <?php }
 
 function display_archive_deal_sidebar() { ?>
-	<ul class="deal-sidebar deals-col-12">
+	<ul class="deal-sidebar col-xs-12 col-sm-4 col-md-4 deal-details">
       <?php
       if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('archive-deal-sidebar') ); ?>
    </ul>
