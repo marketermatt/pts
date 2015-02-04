@@ -110,6 +110,7 @@ if(!function_exists('pts_VC_setup')) {
 			$output .= wpb_js_remove_wpautop($content);
 			$output .= '</div>';
 			$output .= '</div>';
+            //$output .= '</div>';
 
             return $output;
 	    }
@@ -489,10 +490,8 @@ if(!function_exists('pts_VC_setup')) {
 	          "param_name" => "deals_per_row",
 	          "value" => array(
 	              "",
-	              __("1", PTS_DOMAIN) => '1',
 	              __("3", PTS_DOMAIN) => '3',
-	              __("3", PTS_DOMAIN) => '4',
-	              __("4", PTS_DOMAIN) => '6'
+	              __("4", PTS_DOMAIN) => '4',
 	            )
 	        ),
             array(

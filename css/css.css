@@ -9,11 +9,20 @@ body{
 }
 
 * {
-  -webkit-transition: all 0.4s ease;
-  -moz-transition:    all 0.4s ease;
-  -ms-transition:     all 0.4s ease;
-  -o-transition:      all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition:    all 0.4s ease;
+    -ms-transition:     all 0.4s ease;
+    -o-transition:      all 0.4s ease;
 }
+
+body .container-wrap{
+    background: URL('../images/top_layer.png') repeat;
+}
+
+body.home .container-wrap{
+    background: #fff !important;
+}
+
 
 .no-15{
     padding-left:0;
@@ -368,13 +377,61 @@ div.rotatingtweet p{
     padding: 0 !important;
 }
 
+.deals-shortcode .deals-single-image img{
+    width: 100%;
+    height: auto;
+}
+
+.deals-shortcode h5{
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.deals-shortcode p{
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.deals-shortcode .star-result, .deals-shortcode .count{
+    display: none;
+}
+
+.ribbon{
+    width: 93px;
+    height: 45px;
+    background: URL('../images/ribbon.png') no-repeat;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.deals-shortcode .price-container{
+    padding: 0 10px;
+}
+
+.deals-shortcode .price-container .oldPrice, .deals-shortcode .price-container .salePrice{
+    width: 50%;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+}
+
+.deals-shortcode .oldPrice{
+    width: 40% !important;
+    text-decoration: line-through;
+}
+
+.deals-shortcode .salePrice{
+    font-size: 20px;
+}
 
 /* Social Deals Styles */
 
 .blue {
 	background: #4498c7 !important;
 	color: #fff !important;
-	
+
 }
 
 .black {
@@ -403,7 +460,7 @@ div.rotatingtweet p{
 	border-radius: 0px;
 	float: right;
 	margin-bottom: 20px;
-	
+
 }
 
 .deals-row .wps-deals-buy-now {
@@ -504,4 +561,50 @@ div.rotatingtweet p{
 
 .deals-row .deals-more-content .deals-more-price-box span {
 	color: #fff;
+}
+
+.vc_row-fluid{
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.deals-row .deals-shortcode .deal-content{
+    padding: 0 10px;
+}
+
+.deals-row .deals-shortcode:first-child .deal-content{
+    padding-left: 0px !important;
+}
+
+.deals-row .deals-shortcode:last-child .deal-content{
+    padding-right: 0px !important;
+}
+
+.list-item{
+    background-color: #f5f5f5;
+    height: 350px;
+}
+
+.page-title{
+    text-align: center;
+}
+
+.post-list{
+    margin-right: 20px;
+}
+
+.post-list .list-item{
+    border: 1px solid #d3d3d3;
+    margin-bottom: 20px;
+}
+
+.post-list .list-item .list-content h4{
+    margin-top:0;
+}
+
+.post-list .list-item .list-content{
+    padding: 30px 30px;
 }
