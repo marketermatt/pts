@@ -6,17 +6,6 @@
  * Time: 1:51 PM
  */
 
-//get all the options with arrays into a variable
-$sitebackground = ot_get_option('pts_site_bg');
-$pts_main_font = ot_get_option('pts_main_font');
-$pts_menu_font = ot_get_option('pts_menu_font');
-$pts_h1 = ot_get_option('pts_h1');
-$pts_h2 = ot_get_option('pts_h2');
-$pts_h3 = ot_get_option('pts_h3');
-$pts_h4 = ot_get_option('pts_h4');
-$pts_h5 = ot_get_option('pts_h5');
-$pts_h6 = ot_get_option('pts_h6');
-
 
 //main style added to the top of each page
 
@@ -24,6 +13,17 @@ add_action('wp_head', 'pts_style_init');
 if(!function_exists('pts_style_init')) {
     function pts_style_init()
     {
+        //get all the options with arrays into a variable
+        $sitebackground = ot_get_option('pts_site_bg');
+        $pts_main_font = ot_get_option('pts_main_font');
+        $pts_menu_font = ot_get_option('pts_menu_font');
+        $pts_h1 = ot_get_option('pts_h1');
+        $pts_h2 = ot_get_option('pts_h2');
+        $pts_h3 = ot_get_option('pts_h3');
+        $pts_h4 = ot_get_option('pts_h4');
+        $pts_h5 = ot_get_option('pts_h5');
+        $pts_h6 = ot_get_option('pts_h6');
+
         ?>
         <script type="text/javascript">
             jQuery(document).ready(function(){
