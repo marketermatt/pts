@@ -9,11 +9,20 @@ body{
 }
 
 * {
-  -webkit-transition: all 0.4s ease;
-  -moz-transition:    all 0.4s ease;
-  -ms-transition:     all 0.4s ease;
-  -o-transition:      all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition:    all 0.4s ease;
+    -ms-transition:     all 0.4s ease;
+    -o-transition:      all 0.4s ease;
 }
+
+body .container-wrap{
+    background: URL('../images/top_layer.png') repeat;
+}
+
+body.home .container-wrap{
+    background: #fff !important;
+}
+
 
 .no-15{
     padding-left:0;
@@ -572,4 +581,30 @@ div.rotatingtweet p{
 
 .deals-row .deals-shortcode:last-child .deal-content{
     padding-right: 0px !important;
+}
+
+.list-item{
+    background-color: #f5f5f5;
+    height: 350px;
+}
+
+.page-title{
+    text-align: center;
+}
+
+.post-list{
+    margin-right: 20px;
+}
+
+.post-list .list-item{
+    border: 1px solid #d3d3d3;
+    margin-bottom: 20px;
+}
+
+.post-list .list-item .list-content h4{
+    margin-top:0;
+}
+
+.post-list .list-item .list-content{
+    padding: 30px 30px;
 }

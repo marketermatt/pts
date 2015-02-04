@@ -15,7 +15,7 @@ define('PTS_CSS_URL', trailingslashit(PARENT_DIR).'css');
 define('CHILD_URL', get_stylesheet_directory_uri());
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit(PTS_CODE_URL) . 'option-tree/' );
 
-//action after the theme is activated. In there you have the text domain.
+//action after the theme is activated. In there you have the text domain. You can add more support in there.
 add_action('after_setup_theme', 'pts_theme_setup');
 function pts_theme_setup(){
 	load_theme_textdomain( PTS_DOMAIN, get_template_directory() . '/languages' );
@@ -24,6 +24,8 @@ function pts_theme_setup(){
 	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
+
+    add_theme_support( 'post-formats', array( 'video', 'gallery', 'image', 'audio'  ) );
 }
 
 
