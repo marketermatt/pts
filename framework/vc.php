@@ -461,6 +461,14 @@ if(!function_exists('pts_VC_setup')) {
 	    // ! Register New Element: Popular Deals
 	    // **********************************************************************//
 
+        $taxonomy = 'wpsdealcategories';
+        $tax_terms = get_terms($taxonomy);
+
+        $terms_array = array('All'=>'all');
+        foreach($tax_terms as $tax_data){
+            $terms_array[$tax_data->name] = $tax_data->slug;
+        }
+
 	    $popular_deals_params = array(
 	      'name' => 'Deals',
 	      'base' => 'local_joe_deals',
@@ -510,6 +518,12 @@ if(!function_exists('pts_VC_setup')) {
 	          "param_name" => "deal_count",
 	          "description" => __("How many deals to show? Please enter number only.", PTS_DOMAIN)
 	        ),
+              array(
+              "type" => "dropdown",
+              "heading" => __("Categories", PTS_DOMAIN),
+              "param_name" => "categories",
+              "value" => $terms_array
+            ),
 	      )
 
 	    );

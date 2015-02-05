@@ -198,7 +198,8 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
         'align_title' => 'left',
         'deals_per_row' => 4,
         'deal_type' => 2,
-        'deal_count' => 4
+        'deal_count' => 4,
+        'categories' => 'all'
     ),$atts);
 
     if($a['deals_per_row'] == 4)
@@ -230,6 +231,19 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
     if($a['deal_count'] == '')
         $a['deal_count'] = 5;
     $args['posts_per_page'] = $a['deal_count'];
+
+    if($a['categories'] != 'all'){
+        $args['tax_query'] = array(
+            array(
+                'post_type' => 'wpsdeals',
+                'taxonomy' => 'wpsdealcategories',
+                'field' => 'slug',
+                'terms' => array(
+                    $a['categories']
+                )
+            )
+        );
+    }
 
     $deals = '<div class="row">';
 
