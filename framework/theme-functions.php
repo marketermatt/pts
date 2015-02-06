@@ -7,7 +7,13 @@
  */
 /********************* Apply Geo hook for geo directory*********************/
 
+remove_action( 'geodir_detail_before_main_content', 'geodir_breadcrumb', 20 );
 remove_action('geodir_listings_before_main_content','geodir_breadcrumb', 20);
+remove_action( 'geodir_author_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_search_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_home_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_location_before_main_content', 'geodir_breadcrumb', 20 );
+
 remove_action('geodir_wrapper_open','geodir_action_wrapper_open',10,3);	
 add_action( 'geodir_wrapper_open', 'geo_action_wrapper_open', 10, 3 );
 function geo_action_wrapper_open()
@@ -22,6 +28,13 @@ function geo_action_wrapper_close()
 	}
 
 /********************* End Apply Geo hook for geo directory*********************/
+
+
+/************** Start details page BREADCRUMB********************/
+remove_action( 'geodir_detail_before_main_content', 'geodir_breadcrumb', 20 );
+
+/**************End details page BREADCRUMB********************/	
+
 
 add_filter('show_admin_bar', '__return_false');
 add_theme_support( 'post-thumbnails' );
@@ -38,6 +51,8 @@ function pts_post_type() {
             'supports' => array( 'title', 'thumbnail' ),
         )
     );
+
+    add_image_size( 'blog-gallery-thumb', 165, 210, true ); // (cropped)
 
    /* $labels = array(
 		'name'                => _x( 'Projects', 'Post Type General Name', PTS_DOMAIN ),
@@ -671,4 +686,13 @@ class Wps_Deals_Lists_new_image extends WP_Widget {
 	}
 }
 
+function get_post_format_contents(){
+    $pattern = get_shortcode_regex();
+    preg_match('/'.$pattern.'/s', $post->post_content, $matches);
+
+    if (is_array($matches)) {
+        $shortcode = $matches[0];
+        echo $shortcode;
+    }
+}
 ?>

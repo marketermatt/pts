@@ -9,17 +9,13 @@
  */
 
 get_header(); ?>
-<div class="container-wrap">
-    <div class="container-fluid borderbottom">
-        <div class="page-excerpt container">
-            <h3><?php echo get_the_title(); ?></h3>
 
-            <div class="entry-meta">
-                <?php echo pts_posted_on(); ?>
-            </div><!-- .entry-meta -->
-            <?php pts_breadcrumbs(); ?>
-        </div>
-    </div>
+<div class='content_back title-area'>
+    <h2 class="page-title"><?php the_title(); ?></h2>
+    <div class="entry-meta"><?php echo pts_posted_on(); ?></div>
+</div>
+
+<div class="container-wrap">
     <div class="container">
         <div class="row">
             <div class="content-area col-xs-12 col-sm-8 col-md-9 hidden-overflow">

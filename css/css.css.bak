@@ -15,9 +15,9 @@ body{
     -o-transition:      all 0.4s ease;
 }
 
-body .container-wrap{
+/*body .container-wrap{
     background: URL('../images/top_layer.png') repeat;
-}
+}*/
 
 body.home .container-wrap{
     background: #fff !important;
@@ -27,6 +27,18 @@ body.home .container-wrap{
 .no-15{
     padding-left:0;
     padding-right:0;
+}
+
+.no-15-left{
+    padding-left:0;
+}
+
+.no-15-right{
+    padding-right:0;
+}
+
+.border-color{
+    border: 1px solid #ccc;
 }
 
 a:hover{
@@ -591,6 +603,7 @@ div.rotatingtweet p{
 .page-title{
     text-align: center;
 }
+}
 
 .post-list{
     margin-right: 20px;
@@ -603,8 +616,352 @@ div.rotatingtweet p{
 
 .post-list .list-item .list-content h4{
     margin-top:0;
+    margin-bottom: 1px;
+    font-family: 'MyriadProBoldCond';
 }
 
 .post-list .list-item .list-content{
     padding: 30px 30px;
+}
+
+.loop-grad{
+    background: -webkit-linear-gradient(90deg, #e5e5e5 0%, #f0f0f0 100%);
+    background: -moz-linear-gradient(90deg, #e5e5e5 0%, #f0f0f0 100%);
+    background: -o-linear-gradient(90deg, #e5e5e5 0%, #f0f0f0 100%);
+    background: -ms-linear-gradient(90deg, #e5e5e5 0%, #f0f0f0 100%);
+    background: linear-gradient(0deg, #e5e5e5 0%, #f0f0f0 100%);
+    padding: 22px;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 71px;
+}
+
+.no-15-left .loop-grad{
+    border-right: 0;
+}
+
+.loop-grad .icon-area{
+    float: left;
+    width: auto;
+    margin-right: 20px;
+}
+
+.loop-grad .ci:before{
+    font-size: 25px;
+    font-family: fontAwesome;
+    content: '\f075';
+}
+
+.loop-grad .cat:before{
+    font-size: 25px;
+    font-family: fontAwesome;
+    content: '\f0c9';
+}
+
+.loop-grad .author-area:before{
+    font-size: 25px;
+    font-family: fontAwesome;
+    content: '\f007';
+}
+
+.loop-lower-content{
+    float: left;
+    width: auto;
+}
+
+.loop-lower-content h6{
+    margin:0 0 1px 0;
+}
+
+.title-area{
+    border-bottom: 5px solid #ccc;
+    margin-bottom: 20px;
+}
+
+/* Geo Directory */
+
+.geodir-entry-title {
+color:red;
+}
+
+.geo_wrapper_open{
+    clear: both;
+}
+
+div.hr{
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.video-content{
+    padding: 3px;
+    border: 1px solid #ccc;
+    width: auto;
+    float: left;
+    margin-bottom: 10px;
+    width: 535px;
+}
+
+.list-gallery img{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.title-area .entry-meta{
+    text-align: center;
+    margin-top:-30px;
+    margin-bottom: 25px;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.rating-form{
+    padding: 0 20px;
+    border: 1px solid #ccc;
+}
+
+#commentform input[type=text]{
+    width: 40%;
+}
+
+.comments-list, .children{
+    list-style: none;
+    list-style-image: none;
+    padding: 0px;
+}
+
+.comments-list {
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  list-style: none;
+}
+.comments-list li {
+  margin-bottom: 23px;
+}
+.comments-list .media > .pull-left {
+  margin-right: 21px;
+}
+.comments-list .media {
+  padding: 41px 21px 34px;
+  position: relative;
+  border: 1px solid #E5E5E5;
+}
+.comments-list .media p {
+  color: #767676;
+  font-size: 13px;
+  line-height: 24px;
+}
+.comments-list .media-body {
+  color: #767676;
+  font-size: 13px;
+  line-height: 24px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.comments-list .media-object {
+  border: 1px solid #E5E5E5;
+}
+.comments-list .media-heading a,
+.comments-list .media-heading {
+  font: 14px/15px 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 9px;
+}
+.comments-list .media-heading a:hover,
+.comments-list .media-heading:hover {
+  color: #767676;
+}
+.comments-list .children {
+  margin-left: 80px;
+  margin-top: 25px;
+}
+.comments-list .children li .media {
+  overflow: visible;
+}
+.comments-list .children li .media:before {
+  position: absolute;
+  left: -51px;
+  top: -27px;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 65px;
+  border-left: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+/******new css added here******/
+
+
+.geo_wrapper_open{ width:100%; max-width:1170px; margin:0px auto; font-family: 'MyriadProBoldCond';}
+.geo_wrapper_open h1{  font-family: 'MyriadProBoldCond'; text-align:center; font-size:38px; color:#535353; margin:0px; padding:30px 0px;} 
+.content_back{ width:100%; background:url('../images/content_back.png') repeat-x #f6f6f6;}
+/*.top_heading{ padding:10px 0px; border-bottom:1px solid #c4c4c4;}
+.top_heading h3{ display:inline-block; font-size:18px; margin:0px; padding:10px 0px; color:#535353; }
+.view_all{ display:inline-block; float:right; padding:10px;}
+.view_all a{ display:inline-block; color:#cb0101; font-size:14px; text-decoration:none;}
+.view_all a:hover{ text-decoration:none;}*/
+.geodir_category_list_view li.geodir-gridview{ border:1px solid #c5c5c5;}
+.geodir_category_list_view li.gridview_onefourth{ width:calc(100%/3); width:32.5%; display:inline-block;}
+.geodir_category_list_view li.gridview_onefourth:last-child{ margin-right:none;}
+.geodir_category_list_view li.geodir-gridview h3{ font-size:12px; padding:10px 0px 0px 0px;}
+.geodir_category_list_view li.geodir-gridview h3 a{ font-size:12px; color:#cb0101;}
+.geodir-pcomments i{ color:#000; float:right; padding-left:10px; }
+.geodir-pcomments{ background:#c60909; font-size:16px; color:#fff; padding:5px;}
+.geodir_category_list_view li.geodir-gridview .geodir-addinfo a{ font-size:20px; margin-bottom:5px; color:#fff; padding:5px 10px; display:inline-block;}
+.geodir-addtofav-icon i{ float:right; color:#d60d0d; padding-left:15px;}
+.geodir-addtofav-icon{ background:#000;}
+
+ul.geodir-popular-cat-list { margin:0px; padding:0px; list-style:none;}
+.geodir-cat-list ul li{ margin:0px; display:inline-block;}
+.geodir_full_page .geodir-pcat-show .geodir-cat-list ul li{ padding-left:10px; display:inline; width:auto;}
+.geodir_full_page .geodir-cat-list ul li a{ background: #ffffff; /* Old browsers */ display:inline-block; font-family:verdana;
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZmVmZWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ffffff 0%,#efefef 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-8 */ border:1px solid #c5c5c5; color:#fff; text-decoration:none; padding:5px; color:#cb0101;}
+.geodir_full_page .geodir-cat-list ul li a:hover{ text-decoration:none;}
+.geodir-content-right geodir-sidebar-wrap widget-title{color: #535353;font-size: 18px;margin: 0;padding: 10px 0;}
+
+.geodir_list_heading{ padding:10px 0px; border-bottom:1px solid #c4c4c4;}
+.geodir_list_heading h3{ display:inline-block; font-size:18px; margin:0px; padding:10px 0px; color:#535353; font-weight: bold; }
+.geodir-viewall{ display:inline-block; float:right; padding:10px;color:#d01f1f}
+.geodir-viewall a{ display:inline-block; color:#cb0101; font-size:14px; text-decoration:none;}
+.geodir-viewall a:hover{ text-decoration:none;}
+section.widget { margin-bottom: 5px;}
+.widget-title
+{
+color:#535353; font-weight: bold;font-size:18px;
+}
+.geodir_loginbox h3 {border-bottom:1px solid #c4c4c4;}
+.geodir_form_row a {color:#d01f1f;}
+
+[class*="span"]{ margin-left:0px !important;}
+[class*="span"]{ margin-left:0px; !important;}
+
+
+@media screen and (max-width: 471px) {
+.geodir_category_list_view li.geodir-gridview .geodir-addinfo a{ font-size:15px; color:#fff;}
+}
+
+@media screen and (max-width: 471px) {
+
+.geodir_category_list_view li.gridview_onefourth{ width:calc(100%/1); width:100%; display:inline-block;}
+
+
 }
