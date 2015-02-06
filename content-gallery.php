@@ -5,7 +5,7 @@
 
         if (is_array($matches)) {
             $shortcode = $matches[0];
-            $gallery_html=do_shortcode($shortcode);
+            echo do_shortcode($shortcode);
 
         }
     ?>
