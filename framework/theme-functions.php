@@ -671,4 +671,16 @@ class Wps_Deals_Lists_new_image extends WP_Widget {
 	}
 }
 
+function get_post_format_contents(){
+    $pattern = get_shortcode_regex();
+    preg_match('/'.$pattern.'/s', $post->post_content, $matches);
+
+    if (is_array($matches)) {
+        $shortcode = $matches[0];
+        echo $shortcode;
+    }
+}
+
+add_image_size( 'blog-gallery-thumb', 165, 210, true ); // (cropped)
+
 ?>
