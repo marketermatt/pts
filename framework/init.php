@@ -25,8 +25,9 @@ function pts_theme_setup(){
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 
-    add_theme_support( 'post-formats', array( 'video', 'gallery', 'audio'  ) );
+    add_theme_support( 'post-formats', array( 'video', 'gallery', 'image', 'audio'  ) );
 }
+
 
 /**
  * Required: set 'ot_theme_mode' filter to true.
