@@ -39,6 +39,8 @@ function pts_post_type() {
         )
     );
 
+    add_image_size( 'blog-gallery-thumb', 165, 210, true ); // (cropped)
+
    /* $labels = array(
 		'name'                => _x( 'Projects', 'Post Type General Name', PTS_DOMAIN ),
 		'singular_name'       => _x( 'Project', 'Post Type Singular Name', PTS_DOMAIN ),
@@ -680,7 +682,5 @@ function get_post_format_contents(){
         echo $shortcode;
     }
 }
-
-add_image_size( 'blog-gallery-thumb', 165, 210, true ); // (cropped)
 
 ?>

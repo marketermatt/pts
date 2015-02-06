@@ -696,6 +696,13 @@ div.hr{
     width: 535px;
 }
 
+.list-gallery img{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
 /******new css added here******/
 
 
