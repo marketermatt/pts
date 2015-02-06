@@ -703,6 +703,197 @@ div.hr{
     padding: 2px;
 }
 
+.title-area .entry-meta{
+    text-align: center;
+    margin-top:-30px;
+    margin-bottom: 25px;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+.rating-form{
+    padding: 0 20px;
+    border: 1px solid #ccc;
+}
+
+#commentform input[type=text]{
+    width: 40%;
+}
+
+.comments-list, .children{
+    list-style: none;
+    list-style-image: none;
+    padding: 0px;
+}
+
+.comments-list {
+  margin: 0;
+  padding: 0;
+  margin-top: 30px;
+  list-style: none;
+}
+.comments-list li {
+  margin-bottom: 23px;
+}
+.comments-list .media > .pull-left {
+  margin-right: 21px;
+}
+.comments-list .media {
+  padding: 41px 21px 34px;
+  position: relative;
+  border: 1px solid #E5E5E5;
+}
+.comments-list .media p {
+  color: #767676;
+  font-size: 13px;
+  line-height: 24px;
+}
+.comments-list .media-body {
+  color: #767676;
+  font-size: 13px;
+  line-height: 24px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.comments-list .media-object {
+  border: 1px solid #E5E5E5;
+}
+.comments-list .media-heading a,
+.comments-list .media-heading {
+  font: 14px/15px 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 9px;
+}
+.comments-list .media-heading a:hover,
+.comments-list .media-heading:hover {
+  color: #767676;
+}
+.comments-list .children {
+  margin-left: 80px;
+  margin-top: 25px;
+}
+.comments-list .children li .media {
+  overflow: visible;
+}
+.comments-list .children li .media:before {
+  position: absolute;
+  left: -51px;
+  top: -27px;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 65px;
+  border-left: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
 /******new css added here******/
 
 

@@ -1,5 +1,9 @@
 @media(max-width:767px){
 
+     .no-15-right, .no-15, .no-15-left{
+         padding: 0 15px !important;
+     }
+
 }
 @media(min-width:768px) and (max-width:991px){
     #navigationbar{
@@ -16,6 +20,10 @@
         /* float: left; */
         margin:0 5px;
     }
+
+    .no-15-right, .no-15, .no-15-left{
+         padding: 0 15px !important;
+     }
 }
 @media(min-width:992px) and (max-width:1199px){}
 @media(min-width:1200px){}

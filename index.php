@@ -12,9 +12,6 @@
 <div class="container-wrap">
     <div class="container">
         <div class="row">
-            <div class="page-title">
-
-            </div>
             <div class="content-area col-xs-12 col-sm-8 col-md-9 hidden-overflow">
                 <?php get_template_part('template/cat','list'); ?>
             </div>
