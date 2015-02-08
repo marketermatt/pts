@@ -78,7 +78,7 @@
             </div>
             <div class="hidden-xs col-sm-12 col-md-3">
                 <div class="shopping-cart">
-                    <a href="#">Shopping Cart(0)</a>
+                    <a href="<?php echo home_url('/social-deals-checkout/'); ?>">Shopping Cart(<?php echo get_cart_area(); ?>)</a>
                 </div>
             </div>
         </div>

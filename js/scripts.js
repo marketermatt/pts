@@ -92,16 +92,4 @@ jQuery(document).scroll(function() {
         }
     }
 });
-
-(function($) {
-
-      $('.isotope').imagesLoaded( function(){
-          $('.isotope').isotope({
-        itemSelector: '.item',
-        masonry: {
-            columnWidth: 125,
-            gutter: 15
-        }
-      });
-  });
-})( jQuery );
+( jQuery );

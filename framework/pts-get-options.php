@@ -60,6 +60,10 @@ if(!function_exists('pts_style_init')) {
             background:'.ot_get_option('pts_accent_color').' !important;
         }';
 
+        echo '.widgets_titles_sidebar{
+            background:'.ot_get_option('pts_accent_color').';
+        }';
+
         echo '#footer-area{
             border-top: 5px solid '.ot_get_option('pts_accent_color').' !important;
         }';

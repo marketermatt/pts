@@ -191,6 +191,8 @@ function cur_year_func(){
 }
 
 /***********************************Deals shortcodes***********************************/
+/* This shortcode is a bit complex.*/
+
 add_shortcode('local_joe_deals','pts_local_joes_shortcode_function');
 function pts_local_joes_shortcode_function($atts, $content = null) {
     $a = shortcode_atts(array(
@@ -247,20 +249,38 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
 
     $deals = '<div class="row">';
 
+    global $wps_deals_currency;
+    $currency = $wps_deals_currency->currencies;
+    $symbol = $currency->cr_symbol;
+    $prefix = WPS_DEALS_META_PREFIX;
+
     $the_query = new WP_Query( $args );
     while ( $the_query->have_posts() ) : $the_query->the_post();
+        $buy_button_behaviour = get_post_meta(get_the_ID(),'_wps_deals_behavior',true);
+
+        if($buy_button_behaviour == 'direct')
+        {
+            $dealbutton = '<a href="?dealsaction=buynow&dealid='.get_the_ID().'"><div class="btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> Buy Now</div></a>';
+        }
+        else{
+            $dealbutton = '<a href="javascript:void(0);"><div class="deals-add-to-cart-button btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> To Cart</div></a>';
+            $dealbutton .= '<input type="hidden" id="deals_id" name="wps_deals_id" class="deals-id" value="199">';
+            $dealbutton .= '<div class="deals-cart-process-show">
+		<img class="deals-cart-loader" src="'.home_url().'/wp-content/plugins/deals-engine/includes/images/cart-loader.gif">
+	</div>
+
+	<a href="'.home_url().'/social-deals-checkout/" class="deals-checkout red deals-button btn-big">
+		View Cart	</a>';
+
+        }
 
         ob_start();
-        wps_deals_single_deal_img();
-        $deal_image = ob_get_contents();
+        wps_deals_purchase_link_button();
+        $cart_button = ob_get_contents();
         ob_end_clean();
 
-        global $wps_deals_currency;
+        $deal_image = get_the_post_thumbnail( get_the_ID(), 'deal-shortcode-display' );
 
-        $currency = $wps_deals_currency->currencies;
-        $symbol = $currency->cr_symbol;
-
-        $prefix = WPS_DEALS_META_PREFIX;
 		$normalprice = get_post_meta( get_the_ID(), $prefix.'normal_price', true );
 		$saleprice = get_post_meta( get_the_ID(), $prefix.'sale_price', true );
 
@@ -274,7 +294,7 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
                                 OFF
                             </div>
                         </div>';
-            $deals .= $deal_image;
+            $deals .= '<a href="'.get_the_permalink().'"><div class="deals-single-image">'.$deal_image.'</div></a>';
             $deals .= '<div style="text-align:center;">'.do_shortcode('[display_rating_result post_id="'.get_the_ID().'"]').'</div>';
             $deals .= '<a href="'.get_permalink(get_the_ID()).'"><h5>'.get_the_title().'</h5></a>';
             $deals .= '<p>'.get_the_excerpt().'</p>';
@@ -283,8 +303,9 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
                 $deals .= '<div class="salePrice">'.$wps_deals_currency->currencies['cr_symbol'].$saleprice.'</div>';
             $deals .= '</div>';
             $deals .= '<div class="clearfix"></div><div style="margin:10px 10px; border-bottom: 1px dashed #ccc; height:5px;"></div>';
-            $deals .= '<a href=""><div class="btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> To Cart</div></a>';
-            $deals .= '<a href=""><div class="btn btn-default btn-fill fa fa-bars" style="margin-right:10px;margin-bottom:10px; font-size:10px; float:right;"> Details</div></a>';
+            /*$deals .= '<a href=""><div class="btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> To Cart</div></a>';*/
+    $deals .= $dealbutton;
+            $deals .= '<a href="'.get_the_permalink().'"><div class="btn btn-default btn-fill fa fa-bars" style="margin-right:10px;margin-bottom:10px; font-size:10px; float:right;"> Details</div></a>';
         $deals .= '</div></div>';
     endwhile;
 

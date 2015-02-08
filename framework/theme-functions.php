@@ -52,45 +52,8 @@ function pts_post_type() {
         )
     );
 
-    add_image_size( 'blog-gallery-thumb', 165, 210, true ); // (cropped)
-
-   /* $labels = array(
-		'name'                => _x( 'Projects', 'Post Type General Name', PTS_DOMAIN ),
-		'singular_name'       => _x( 'Project', 'Post Type Singular Name', PTS_DOMAIN ),
-		'menu_name'           => __( 'Projects', PTS_DOMAIN ),
-		'parent_item_colon'   => __( 'Parent Item:', PTS_DOMAIN ),
-		'all_items'           => __( 'All Projects', PTS_DOMAIN ),
-		'view_item'           => __( 'View Project', PTS_DOMAIN ),
-		'add_new_item'        => __( 'Add New Project', PTS_DOMAIN ),
-		'add_new'             => __( 'Add New', PTS_DOMAIN ),
-		'edit_item'           => __( 'Edit Item', PTS_DOMAIN ),
-		'update_item'         => __( 'Update Item', PTS_DOMAIN ),
-		'search_items'        => __( 'Search Project', PTS_DOMAIN ),
-		'not_found'           => __( 'Not found', PTS_DOMAIN ),
-		'not_found_in_trash'  => __( 'Not found in Trash', PTS_DOMAIN ),
-	);
-	$args = array(
-		'label'               => __( 'project', PTS_DOMAIN ),
-		'description'         => __( 'Your Projects', PTS_DOMAIN ),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', ),
-		'taxonomies'          => array( 'category', 'post_tag' ),
-		'hierarchical'        => false,
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 20,
-		'menu_icon'           => 'dashicons-images-alt',
-		'can_export'          => true,
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-        'query_var'           => 'project',
-		'capability_type'     => 'page',
-	);
-	register_post_type( 'pts_project', $args );*/
+    add_image_size( 'blog-gallery-thumb', 165, 210, true );
+    add_image_size( 'deal-shortcode-display', 260, 200, true);
 }
 
 add_action( 'after_setup_theme', 'pts_theme_features' );
@@ -104,47 +67,6 @@ function pts_theme_features() {
 
 if ( ! isset( $content_width ) )
 	$content_width = 800;
-
-/*function homepage_colums(){
-    $elstart = '<div class="row home-colums"><div class="container">';
-    $elend = '</div></div>';
-        $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-1">
-                <div class="icon-area">
-                      <i class="fa '.ot_get_option('pts_homepage_column_sections_sec_1_icon').' fa-3x" style="color:#fff;"></i>
-                </div>
-                <div class="colum-text">
-                    '.ot_get_option('pts_homepage_column_sections_sec_1').'
-                </div>
-                <div class="button-area-1">
-                    '.do_shortcode('[button title="'.ot_get_option('pts_homepage_column_sections_sec_1_btn').'" href="'.ot_get_option('pts_homepage_column_sections_sec_1_link').'"]').'
-                </div>
-        </div>';
-
-    $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-2">
-                <div class="icon-area">
-                      <i class="fa '.ot_get_option('pts_homepage_column_sections_sec_2_icon').' fa-3x" style="color:#fff;"></i>
-                </div>
-                <div class="colum-text">
-                    '.ot_get_option('pts_homepage_column_sections_sec_2').'
-                </div>
-                <div class="button-area-2">
-                    '.do_shortcode('[button title="'.ot_get_option('pts_homepage_column_sections_sec_2_btn').'" href="'.ot_get_option('pts_homepage_column_sections_sec_2_link').'"]').'
-                </div>
-        </div>';
-    $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-3">
-                <div class="icon-area">
-                      <i class="fa '.ot_get_option('pts_homepage_column_sections_sec_3_icon').' fa-3x" style="color:#fff;"></i>
-                </div>
-                <div class="colum-text">
-                    '.ot_get_option('pts_homepage_column_sections_sec_3').'
-                </div>
-                <div class="button-area-3">
-                    '.do_shortcode('[button title="'.ot_get_option('pts_homepage_column_sections_sec_3_btn').'" href="'.ot_get_option('pts_homepage_column_sections_sec_3_link').'"]').'
-                </div>
-        </div>';
-
-    return $elstart.$returns.$elend;
-}*/
 
 function pts_main_wrap() {
    return 'container-fluid no-15';
@@ -695,4 +617,25 @@ function get_post_format_contents(){
         echo $shortcode;
     }
 }
+
+function is_in_url($string='')
+{
+    if($string == '')
+        return;
+
+    $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    if (false !== strpos($url,$string)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function get_cart_area(){
+    global $wps_deals_cart;
+    $cartdata = $wps_deals_cart->get();
+    $cartdata = $cartdata['products'];
+    return count($cartdata);
+}
+
 ?>

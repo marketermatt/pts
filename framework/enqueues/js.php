@@ -13,5 +13,11 @@ function pts_enqueue_js() {
         wp_enqueue_script( 'isotopejs', trailingslashit(PARENT_URL) . 'js/isotope.js', array('jquery'), '2.1.0', false );
         wp_enqueue_script( 'il', trailingslashit(PARENT_URL) . 'js/il.js', array('jquery'), '2.1.0', false );
     }
+
+    wp_deregister_script('wps-deals-front-scripts');
+    if( !is_in_url('places') ) {
+		wp_register_script( 'wps-deals-front-scripts', WPS_DEALS_URL . 'includes/js/wps-deals-front.js', array( 'jquery' ), null );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'pts_enqueue_js' );

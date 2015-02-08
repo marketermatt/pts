@@ -394,6 +394,18 @@ div.rotatingtweet p{
     height: auto;
 }
 
+.col-md-3 .deals-single-image{
+    max-height: 150px !important;
+    overflow: hidden;
+}
+
+.col-md-4 .deals-single-image{
+    max-height: 220px !important;
+    overflow: hidden;
+}
+
+
+
 .deals-shortcode h5{
     font-weight: bold;
     text-align: center;
@@ -597,11 +609,12 @@ div.rotatingtweet p{
 
 .list-item{
     background-color: #f5f5f5;
-    height: 350px;
 }
 
 .page-title{
+    font-family: 'MyriadProBoldCond';
     text-align: center;
+    margin: 0;
 }
 
 .post-list{
@@ -675,6 +688,7 @@ div.rotatingtweet p{
 .title-area{
     border-bottom: 5px solid #ccc;
     margin-bottom: 20px;
+    padding: 25px 0;
 }
 
 /* Geo Directory */
@@ -710,8 +724,6 @@ div.hr{
 
 .title-area .entry-meta{
     text-align: center;
-    margin-top:-30px;
-    margin-bottom: 25px;
 }
 
 .alignnone {
@@ -963,4 +975,40 @@ color:#535353; font-weight: bold;font-size:18px;
 .geodir_category_list_view li.gridview_onefourth{ width:calc(100%/1); width:100%; display:inline-block;}
 
 
+}
+
+.widgets_titles_sidebar{
+    padding: 15px 15px 10px 15px;
+    color: #fff;
+    font-family: 'MyriadProBoldCond';
+    margin-bottom: 5px;
+}
+
+.wca{
+    border: 1px solid #ccc;
+    padding: 15px 15px;
+    margin-bottom: 15px;
+}
+
+.wca ul{
+    padding: 0 0 0 15px;
+    margin: 0;
+    list-style-type: square;
+}
+
+.wca ul li{
+    margin-bottom:15px;
+}
+
+.widget_search .widgets_titles_sidebar{
+    background: #333 !important;
+}
+
+.widget_title_wrapper .widgets_titles_sidebar{
+    margin-bottom:-1px !important;
+}
+
+.wca form.search-form input.form-control{
+    width: 70% !important;
+    margin-right: -5px;
 }
