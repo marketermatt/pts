@@ -116,7 +116,8 @@ a:hover{
 }
 
 #header-area #header-bottom{
-    background: #cb0101;
+/*    background: #cb0101;*/
+	    background: #cb0101 !important;
 }
 
 #slider-area{
@@ -911,11 +912,13 @@ a img.aligncenter {
   border-bottom: 1px solid #ebebeb;
 }
 
+/**********Date 09-feb-2015****************/
 /****** Geo Directory new css added here******/
 
 
-.geo_wrapper_open{ width:100%; max-width:1170px; margin:0px auto; font-family: 'MyriadProBoldCond';}
-.geo_wrapper_open h1{  font-family: 'MyriadProBoldCond'; text-align:center; font-size:38px; color:#535353; margin:0px; padding:30px 0px;} 
+.geo_wrapper_open{ width:100%; max-width:1170px; margin:0px auto; font-family: 'MyriadProBoldCond'; padding:20px 0px 0px 0px;}
+/*.geo_wrapper_open h1{  font-family: 'MyriadProBoldCond'; text-align:center; font-size:38px; color:#535353; margin:0px; padding:30px 0px;} */
+.geo_wrapper_open h1{  font-family: 'MyriadProBoldCond'; font-size:38px; color:#535353; margin:0px; padding:0px 0px 10px 0px;} 
 .content_back{ width:100%; background:url('../images/content_back.png') repeat-x #f6f6f6;}
 /*.top_heading{ padding:10px 0px; border-bottom:1px solid #c4c4c4;}
 .top_heading h3{ display:inline-block; font-size:18px; margin:0px; padding:10px 0px; color:#535353; }
@@ -923,8 +926,7 @@ a img.aligncenter {
 .view_all a{ display:inline-block; color:#cb0101; font-size:14px; text-decoration:none;}
 .view_all a:hover{ text-decoration:none;}*/
 .geodir_category_list_view li.geodir-gridview{ border:1px solid #c5c5c5;}
-.geodir_category_list_view li.gridview_onefourth{ width:calc(100%/3); width:32.5%; display:inline-block;}
-.geodir_category_list_view li.gridview_onefourth:last-child{ margin-right:none;}
+
 .geodir_category_list_view li.geodir-gridview h3{ font-size:12px; padding:10px 0px 0px 0px;}
 .geodir_category_list_view li.geodir-gridview h3 a{ font-size:12px; color:#cb0101;}
 .geodir-pcomments i{ color:#000; float:right; padding-left:10px; }
@@ -933,10 +935,16 @@ a img.aligncenter {
 .geodir-addtofav-icon i{ float:right; color:#d60d0d; padding-left:15px;}
 .geodir-addtofav-icon{ background:#000;}
 
-ul.geodir-popular-cat-list { margin:0px; padding:0px; list-style:none;}
-.geodir-cat-list ul li{ margin:0px; display:inline-block;}
-.geodir_full_page .geodir-pcat-show .geodir-cat-list ul li{ padding-left:10px; display:inline; width:auto;}
-.geodir_full_page .geodir-cat-list ul li a{ background: #ffffff; /* Old browsers */ display:inline-block; font-family:verdana;
+.geodir-removetofav-icon i{ float:right; color:#d60d0d; padding-left:15px;}
+.geodir-removetofav-icon{ background:#000;}
+.geodir_category_list_view li.geodir-gridview .geodir-post-img .geodir_thumbnail {height: 76%}
+
+
+
+ul.geodir-popular-cat-list { margin:0px; padding:10px 0px; list-style:none;}
+.geodir-cat-list ul li{ margin:0px; display:inline-block; padding-right:10px;}
+.geodir-pcat-show .geodir-cat-list ul li{ padding-left:10px; display:inline; width:auto;}
+.geodir-cat-list ul li a{ background: #ffffff; /* Old browsers */ display:inline-block; font-family:verdana;
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZmVmZWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%); /* FF3.6+ */
@@ -962,9 +970,72 @@ color:#535353; font-weight: bold;font-size:18px;
 .geodir_loginbox h3 {border-bottom:1px solid #c4c4c4;}
 .geodir_form_row a {color:#d01f1f;}
 
-[class*="span"]{ margin-left:0px !important;}
-[class*="span"]{ margin-left:0px; !important;}
+[class*="span"]{ margin-left:0px !important; float:none !important;}
+[class*="span"]{ margin-left:0px; !important; float:none !important;}
 
+.geodir-sidebar-right h3{ margin:0px; padding:20px 0px 20px 0px; }
+.geodir-sidebar-right input[type="text"],[type="password"]{ padding:10px; font-family:arial; border:1px solid #c6c6c6; color:#636363; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; margin-top:5px;}
+.geodir-sidebar-right input[type="submit"]{ padding:10px 20px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; padding:10px 20px; color:#fff; font-size:22px; text-align:center; cursor:pointer; background:#ce4d39; text-transform:uppercase; border:none; outline:none;}
+.geodir-sidebar-right input[type="submit"]:hover{ background:#36363d;}
+.geodir-new-forgot-link{ font-size:14px;}
+
+.geodir-loc-bar-in{ padding:0px; border:none; background:none;}
+.geodir-search input.search_text[type="text"]{ border-radius:0px; background:url(../images/places.png) no-repeat right #fff; margin:10px 0px 0px 0px ; outline:none;}
+.geodir-search input.snear[type="text"]{ border-radius:0px; background:url(../images/near.png) no-repeat right #fff; outline:none; margin:10px 0px 0px 0px;}
+.geodir-search input.geodir_submit_search[type="button"]{ background:#4498c8; border:none; width:auto; padding:10px 20px; color:#fff; font-size:22px; text-transform:uppercase; text-align:center; cursor:pointer; margin:10px 0px 0px 0px;}
+.geodir-search input.geodir_submit_search[type="button"]:hover{ background:#36363d;}
+
+.geodir-loc-bar{ margin:0px; border-bottom:none;}
+.geodir-search{ margin-right:0px; float:none;}
+
+.geodir_full_page .geodir-cat-list ul li{ width:auto;}
+
+.geodir-category-list-in { background:none; border:none; margin:0px; padding:0px;}
+.geodir-category-list-in h3.widget-title{ margin:0px; padding:0px 0px 20px 0px; border-bottom:1px solid #c4c4c4;} 
+.fa-caret-right{ color:black;}
+ul.geodir-loginbox-list{ margin:0px; padding:0px;}
+ul.geodir-loginbox-list li{ border-bottom:none; margin-bottom:0px; padding-bottom:0px; padding-top:10px;}
+ul.geodir-loginbox-list li a.signin { background:#ce4d39; font-size:22px; color:#fff; text-align:center; display:inline-block; padding:10px 20px;}
+ul.geodir-loginbox-list li a.signin:hover { background:#36363d;}
+ul.geodir-loginbox-list li select{ padding:10px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; border:1px solid #c4c4c4; font-family:arial; border-radius:0px; }
+
+.geodir-chosen-container-single .chosen-single{ background:#fff; border-radius:0px; font-family:arial; font-weight:normal; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; border:1px solid #c4c4c4; line-height:37px; padding-bottom:37px;}
+.geodir-pinpoint{display:none;}
+
+.geodir-company_info .geodir_more_info{ font-size:16px; line-height:22px; color:#363636;}
+.geodir-company_info .geodir_more_info a{ color:#cb0101;}
+.geodir-company_info .geodir_more_info a strong{ font-weight:normal;}
+.geodir-addtofav a{ color:#fff; text-decoration:none; display:inline-block; padding:10px; font-size:16px;     font-family: 'MyriadProBoldCond';}
+.geodir-company_info i.fa{ margin-top:5px;}
+/********slider css added here******/
+
+.geodir_flexslider .geodir-slides img{ width:100%;}
+
+/********slider css ends here******/
+
+
+.geodir-sidebar-wrap{ padding:15px 0px 0px 0px;}
+
+span.geodir-category a{ color:#cb0101;}
+span.geodir-tags a {color:#cb0101;}
+dl.geodir-tab-head dd a { color:#36363d;}
+ dl.geodir-tab-head dd.geodir-tab-active a{}
+
+/********tabs start here******/
+
+ ul.geodir-tabs-content{}
+.geodir-tabs-content h3{ font-size:20px; margin:0px; padding:10px 0px; border-bottom:1px dotted #c4c4c4;}
+.geodir-tabs-content p{ font-size:13px; color:#666; line-height:18px; margin:0px; padding:10px 0px;}
+/********tabs end here******/
+
+.comment-form p{ display:inline-block; width:100%; }
+.comment-form p label{ width:100%; display:inline-block;}
+.comment-form p input[type="text"]{ padding:10px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; border:1px solid #c4c4c4; font-size:13px; color:#36363d; width:100% !important; outline:none;}
+.comment-form p textarea{padding:10px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; border:1px solid #c4c4c4; font-size:13px; color:#36363d; width:100% !important; outline:none; resize:none;}
+.comment-form p input[type="submit"]{ font-family: 'MyriadProBoldCond'; background:#36363d; font-size:18px; color:#fff; padding:10px 20px; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; cursor:pointer; border:none;}
+.comment-form p input[type="submit"]:hover{ background:#cb0101;}
+
+.err-no-rating{ border:1px solid #cb0101; background:#ffcece; color:#cb0101; font-size:14px;}
 
 @media screen and (max-width: 471px) {
 .geodir_category_list_view li.geodir-gridview .geodir-addinfo a{ font-size:15px; color:#fff;}
@@ -1012,3 +1083,4 @@ color:#535353; font-weight: bold;font-size:18px;
     width: 70% !important;
     margin-right: -5px;
 }
+/**********End Date 09-feb-2015****************/
