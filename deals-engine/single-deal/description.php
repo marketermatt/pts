@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 ?>
 
-<div itemprop="description" class="deals-description col-xs-12 col-sm-8 col-md-8">
+<div itemprop="description" class="deals-description col-xs-12">
 
 	<?php the_content();?>
     <?php pts_set_post_views(get_the_ID()); ?>
