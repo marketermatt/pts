@@ -917,7 +917,7 @@ a img.aligncenter {
   border-bottom: 1px solid #ebebeb;
 }
 
-/**********Date 09-feb-2015****************/
+/********Start Date 10-feb-2015**********************/
 /****** Geo Directory new css added here******/
 
 
@@ -925,11 +925,6 @@ a img.aligncenter {
 /*.geo_wrapper_open h1{  font-family: 'MyriadProBoldCond'; text-align:center; font-size:38px; color:#535353; margin:0px; padding:30px 0px;} */
 .geo_wrapper_open h1{  font-family: 'MyriadProBoldCond'; font-size:38px; color:#535353; margin:0px; padding:0px 0px 10px 0px;} 
 .content_back{ width:100%; background:url('../images/content_back.png') repeat-x #f6f6f6;}
-/*.top_heading{ padding:10px 0px; border-bottom:1px solid #c4c4c4;}
-.top_heading h3{ display:inline-block; font-size:18px; margin:0px; padding:10px 0px; color:#535353; }
-.view_all{ display:inline-block; float:right; padding:10px;}
-.view_all a{ display:inline-block; color:#cb0101; font-size:14px; text-decoration:none;}
-.view_all a:hover{ text-decoration:none;}*/
 .geodir_category_list_view li.geodir-gridview{ border:1px solid #c5c5c5;}
 
 .geodir_category_list_view li.geodir-gridview h3{ font-size:12px; padding:10px 0px 0px 0px;}
@@ -942,7 +937,7 @@ a img.aligncenter {
 
 .geodir-removetofav-icon i{ float:right; color:#d60d0d; padding-left:15px;}
 .geodir-removetofav-icon{ background:#000;}
-.geodir_category_list_view li.geodir-gridview .geodir-post-img .geodir_thumbnail {height: 76%}
+.geodir_category_list_view li.geodir-gridview .geodir-post-img .geodir_thumbnail {height: 100%}
 
 
 
@@ -1016,6 +1011,8 @@ ul.geodir-loginbox-list li select{ padding:10px; box-sizing:border-box; -webkit-
 
 .geodir_flexslider .geodir-slides img{ width:100%;}
 
+.geodir-pcomments {margin-bottom:5px;}
+
 /********slider css ends here******/
 
 
@@ -1048,7 +1045,7 @@ dl.geodir-tab-head dd a { color:#36363d;}
 
 @media screen and (max-width: 471px) {
 
-.geodir_category_list_view li.gridview_onefourth{ width:calc(100%/1); width:100%; display:inline-block;}
+.geodir_category_list_view li{ width:calc(100%/1); width:100%; display:inline-block;}
 
 
 }
@@ -1088,4 +1085,49 @@ dl.geodir-tab-head dd a { color:#36363d;}
     width: 70% !important;
     margin-right: -5px;
 }
-/**********End Date 09-feb-2015****************/
+
+
+/********* Deals page css****************************/
+.deals-more-content{ border-radius:0px !important; background:#fff; -moz-border-radius:0px; -webkit-border-radius:0px; border:1px solid #bbb !important;}
+.deal_description p { color:#505050 !important; line-height:22px; text-align:center !important; margin:0px; padding:10px 20px; font-size:12px !important; /*overflow:hidden !important;   white-space: nowrap !important; text-overflow: ellipsis !important;*/  font-family:verdana; }
+.deals-more-title{ background:none  !important;}
+h3.deals-more-title a{ color:#505050 !important; font-size:24px; text-align:center !important; font-family:calibri !important; display:block !important; padding:10px 0px !important; margin:0px !important; background:none !important; font-weight:normal;}
+.deals-more-content h3.deals-more-title{ margin:0px !important; padding:0px !important;}
+.deals-archive.small .deals-timer-home-list{ font-size:14px !important; color:#df071b !important;}
+.deals-timer-home-list{ height:auto !important;}
+.deals-timer-home-list{ border-bottom:none !important;}
+.deals-more-price-box{ padding:10px !important; width:100% !important; text-align:center !important;     font-family: 'MyriadProBoldCond'; color:#2f2f2f !imoprtant; }
+.deals-more-price, .deals-more-price-special, .deals-savings{ background:none !important; font-size:22px !important; color:#2f2f2f !important; font-family: 'MyriadProBoldCond' !important; width:auto; display:inline-block;}
+.deals-more-content .deals-more-price-box del{ font-size:22px !important; display:inline-block;}
+
+.deals-home.small .deals-more-content .deals-more-price-box span, .deals-archive.small .deals-more-content .deals-more-price-box span{  color:#2f2f2f; font-size:30px !important; padding:0px 0px 0px 10px;}
+
+.deals-button{ border-radius:0px !important; -moz-border-radius:0px; -webkit-border-radius:0px; background:#2f2f2f !important; padding:5px 15px !important; font-size:18px !important; color:#fff; text-transform:uppercase;}
+.deals-button:hover{ background:#cb0101 !important;}
+
+.deals-row a.deals-add-to-cart-button{ background:url(../images/basket.png) no-repeat right 5px #ce4d39 !important; color:#fff; font-size:30px !important; text-align:left !important;}
+#sde.deals-single p.deals-dime-sale-title{ background:none !important; border:none !important; font-family: 'MyriadProBoldCond'; color:#2f2f2f !important; font-size:30px !important; text-transform:uppercase;}
+.deals-value-single{ color:#c6c6c6 !important; border-right:1px solid #c6c6c6 !important;}
+p.deals-value-title{ color:#c6c6c6 !important;}
+p.deals-value{ color:#c6c6c6 !important;}
+
+.deals-discount-single{ border-right:1px solid #c6c6c6;}
+p.deals-discount-title{ color:#c6c6c6;}
+p.deals-discount{ color:#c6c6c6;}
+
+p.deals-save-title{ color:#c6c6c6;}
+p.deals-save{ color:#c6c6c6;}
+
+p.deals-available-title{ color:#fff;}
+p.deals-available{ color:#fff;}
+
+p.deals-bought-title{ color:#fff;}
+p.deals-bought{ color:#fff;}
+
+.deals-timing{ margin-right:0px;}
+.deals-timing.deals-timer-single{ color:#c60000 !important; font-size:16px; font-weight:normal;}
+
+.deals-description p{ font-size:13px !important; color:#505050; line-height:21px; margin:0px; padding:0px; font-family:verdana;}
+
+/********* Ebd Deals page css****************************/
+/********End Date 10-feb-2015**********************/

@@ -5,14 +5,8 @@
  * Date: 1/6/15
  * Time: 12:20 PM
  */
+ /******************10-feb-2015*************/
 /********************* Apply Geo hook for geo directory*********************/
-
-remove_action( 'geodir_detail_before_main_content', 'geodir_breadcrumb', 20 );
-remove_action('geodir_listings_before_main_content','geodir_breadcrumb', 20);
-remove_action( 'geodir_author_before_main_content', 'geodir_breadcrumb', 20 );
-remove_action( 'geodir_search_before_main_content', 'geodir_breadcrumb', 20 );
-remove_action( 'geodir_home_before_main_content', 'geodir_breadcrumb', 20 );
-remove_action( 'geodir_location_before_main_content', 'geodir_breadcrumb', 20 );
 
 remove_action('geodir_wrapper_open','geodir_action_wrapper_open',10,3);	
 add_action( 'geodir_wrapper_open', 'geo_action_wrapper_open', 10, 3 );
@@ -27,6 +21,65 @@ function geo_action_wrapper_close()
 	echo "</div><!-- END geo_wrapper_open --></div><!-- END content_back --></div>";
 }
 
+
+/************** 10 feb 2015 remove BREADCRUMB********************/
+remove_action( 'geodir_detail_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action('geodir_listings_before_main_content','geodir_breadcrumb', 20);
+remove_action( 'geodir_author_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_search_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_home_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_location_before_main_content', 'geodir_breadcrumb', 20 );
+/******************End remove BREADCRUMB*******************************/
+
+/*********Remove left sidebar on geo ditectory templates pages*********/
+remove_action( 'geodir_author_sidebar_left', 'geodir_action_author_sidebar_left', 10 );
+remove_action('geodir_home_sidebar_left', 'geodir_action_home_sidebar_left', 10 );
+remove_action( 'geodir_listings_sidebar_left', 'geodir_action_listings_sidebar_left', 10 );
+remove_action( 'geodir_location_sidebar_left', 'geodir_action_home_sidebar_left', 10 );
+remove_action( 'geodir_search_sidebar_left', 'geodir_action_search_sidebar_left', 10 );
+
+if (get_option('geodir_detail_sidebar_left_section') ) {
+	remove_action( 'geodir_detail_sidebar', 'geodir_action_details_sidebar', 10 );
+	}
+// Swap deals_timer,see_deal,deals_price and deals_title sides of the deal page
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_timer', 15 );
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_title', 20 );
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_deal', 25 );
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_price', 30 );
+
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_timer', 20 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_title', 15 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_deal', 30 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_price', 25 );	
+	/***********End Swap********************************************************************/
+/*******************End************************************************/
+
+/************** 10 feb 2015 Start use deals tempaltes hooks********************/
+
+remove_action( 'wps_deals_before_main_content', 'wps_deals_output_content_wrapper', 10 );
+add_action( 'wps_deals_before_main_content', 'wps_deal_output_content_wrapper', 10 );
+
+function wps_deal_output_content_wrapper()
+{
+echo "<div class='content_back'><div class='geo_wrapper_open'>";
+}
+
+add_action( 'wp_head', 'remove_quotes');
+function remove_quotes()
+{
+
+/*echo '<script type="text/javascript">
+jQuery(function(){
+var catstr=jQuery(".entry-header h1.entry-title").text();
+var reptitle=catstr.replace(/'/g,'');
+jQuery(".entry-header h1.entry-title").text(reptitle).show();
+});
+
+</script>';*/
+}
+
+/******************End 10-feb-2015*************/
+
 // Not working, but should be
 remove_action( 'geodir_sidebar_listings_top', 'geodir_action_geodir_sidebar_listings_top', 10 );
 add_action( 'geodir_sidebar_listings_top', 'geodir_action_geodir_sidebar_listings_top_new', 10 );
@@ -38,13 +91,6 @@ function geodir_action_geodir_sidebar_listings_top_new(){
 	
 }
 
-/********************* End Apply Geo hook for geo directory*********************/
-
-
-/************** Start details page BREADCRUMB********************/
-remove_action( 'geodir_detail_before_main_content', 'geodir_breadcrumb', 20 );
-
-/**************End details page BREADCRUMB********************/	
 
 
 add_filter('show_admin_bar', '__return_false');
@@ -201,12 +247,15 @@ function add_new_deal_image_size() {
 	add_image_size( 'new-deal-image', 750, 375);
 }
 
+/********Date 10-02-2015 active this hooks for shoing the image on deals page***********/
 // Replace old image with new one
 remove_action( 'wps_deals_single_header_right', 'wps_deals_single_deal_img', 10);
 add_action( 'wps_deals_single_header_right', 'get_new_deal_image', 10);
 
 remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_image', 10);
-// add_action( 'wps_deals_home_more_deals_content', 'get_new_deal_image', 10);
+add_action( 'wps_deals_home_more_deals_content', 'get_new_deal_image', 10);
+
+/******** End Date 10-02-2015 active this hooks for shoing the image on deals page***********/
 
 // Add sidebars for deal single and deal archive
 function add_deal_widget_areas() {
@@ -282,10 +331,13 @@ function pts_deal_ratings() {
 	</div>
 	<?php
 }
-
+/*********Date 10-02-15 add class************/
 function pts_deal_description() {
+	echo '<div class="deal_description">';
 	the_excerpt();
+	echo '</div>';
 }
+/*********End Date 10-02-15 add class************/
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
@@ -652,5 +704,6 @@ function get_cart_area(){
     $cartdata = $cartdata['products'];
     return count($cartdata);
 }
+
 
 ?>
