@@ -5,7 +5,63 @@
  * Date: 1/6/15
  * Time: 12:20 PM
  */
- /******************10-feb-2015*************/
+
+ 
+/******************** 14feb-2015**********************/
+/******************Start Woocommerce*********************/
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action( 'woocommerce_before_main_content', 'woocommerce_content_wrapper',10);
+
+add_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper', 10);
+
+function woocommerce_content_wrapper()
+{
+echo "<div class='content_back'><div class='geo_wrapper_open'>";
+}
+
+function woocommerce_output_content_wrapper()
+{
+	echo "</div></div>";
+}
+
+/*************Remove breadcrumb on shop page ************************/
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+
+
+/*************end breadcrumb on shop page ************************/
+
+/************ Change a text add to cart int Add Cart on shop page********/
+
+add_filter( 'woocommerce_product_add_to_cart_text' , 'custom_woocommerce_product_add_to_cart_text' );
+
+function custom_woocommerce_product_add_to_cart_text() {
+global $product;
+$product_type = $product->product_type;
+
+switch ( $product_type ) {
+case 'external':
+return __( 'Buy product', 'woocommerce' );
+break;
+case 'grouped':
+return __( 'View products', 'woocommerce' );
+break;
+case 'simple':
+return __( 'ADD CART', 'woocommerce' );
+break;
+case 'variable':
+return __( 'Select options', 'woocommerce' );
+break;
+default:
+return __( 'Read more', 'woocommerce' );
+} // end switch
+} 
+
+/************ Change a text add to cart int Add Cart on shop page********/
+/******************** end 14feb-2015**********************/
+ /******************12-feb-2015*************/
 /********************* Apply Geo hook for geo directory*********************/
 
 remove_action('geodir_wrapper_open','geodir_action_wrapper_open',10,3);	
@@ -18,8 +74,27 @@ remove_action('geodir_wrapper_close','geodir_action_wrapper_close',10,1);
 add_action( 'geodir_wrapper_close', 'geo_action_wrapper_close', 10,1);
 function geo_action_wrapper_close()
 {
-	echo "</div><!-- END geo_wrapper_open --></div><!-- END content_back --></div>";
+echo "</div></div><!-- END geo_wrapper_open -->";
 }
+/*remove_action('geodir_wrapper_content_open', 'geodir_action_wrapper_content_open', 10 );
+add_action('geodir_wrapper_content_open', 'geodir_action_wrapper_content', 10 );
+
+function geodir_action_wrapper_content()
+{
+echo "<div class='geo_wrapper_open'>";
+}*/
+/*remove_action('geodir_wrapper_content_close', 'geodir_action_wrapper_content_close', 10,1);
+add_action( 'geodir_wrapper_content_close', 'geodir_action_wrapper_content_close_div', 10,1);
+function geodir_action_wrapper_content_close_div()
+{
+echo "</div>";
+}*/
+/*remove_action('geodir_sidebar_home_bottom_section', 'geodir_action_sidebar_home_bottom_section',10);
+add_action('geodir_sidebar_home_bottom_section', 'geodir_action_sidebar_home_bottom_section_div',10);
+function geodir_action_sidebar_home_bottom_section_div()
+{
+echo "</div>";
+}*/
 
 
 /************** 10 feb 2015 remove BREADCRUMB********************/
@@ -49,7 +124,7 @@ if (get_option('geodir_detail_sidebar_left_section') ) {
 
 	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_timer', 20 );
 	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_title', 15 );
-	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_deal', 30 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_deal_title', 30 );
 	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_price', 25 );	
 	/***********End Swap********************************************************************/
 /*******************End************************************************/
@@ -64,22 +139,158 @@ function wps_deal_output_content_wrapper()
 echo "<div class='content_back'><div class='geo_wrapper_open'>";
 }
 
+/**********10-feb-2015***************/
 add_action( 'wp_head', 'remove_quotes');
 function remove_quotes()
 {
 
-/*echo '<script type="text/javascript">
+/*echo "<script type='text/javascript'>
 jQuery(function(){
-var catstr=jQuery(".entry-header h1.entry-title").text();
-var reptitle=catstr.replace(/'/g,'');
-jQuery(".entry-header h1.entry-title").text(reptitle).show();
-});
+var catstr=jQuery('.entry-header h1.entry-title').text();
 
-</script>';*/
+var reptitle=catstr.replace(/\‘/g,'');
+alert(reptitle);
+jQuery('.entry-header h1.entry-title').text(reptitle).show();
+});
+</script>";*/
+}
+/******************** end 14feb-2015**********************/
+/********** End 10-feb-2015***************/
+/************* 11 feb-2015****************/
+
+/*********** Start Add to cart on archive page************/
+add_action('wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_add_to_cart', 30 );
+function wps_deals_home_more_deals_see_add_to_cart()
+{
+global $post,$wps_deals_options,$wps_deals_price,$wps_deals_model,$wps_deals_cart;
+		
+$prefix = WPS_DEALS_META_PREFIX;
+
+// get the product price
+$productprice = $wps_deals_price->wps_deals_get_price( $post->ID );
+
+//get the display price
+$displayprice = $wps_deals_price->get_display_price( $productprice, $post->ID );
+
+//Get checkout page id
+$payment_checkout_page	= isset( $wps_deals_options['payment_checkout_page'] ) ? $wps_deals_options['payment_checkout_page'] : '';
+
+// get the checkout url 
+$checkouturl = get_permalink($payment_checkout_page );
+
+// get the purchase link for affiliate products 
+$purchaselink = get_post_meta( $post->ID, $prefix . 'purchase_link', true );
+
+// get the add to cart button text
+echo $addtocart_post = get_post_meta( $post->ID, $prefix . 'add_to_cart', true );
+if( !empty( $addtocart_post)) {	
+			$addcartbtntext = $addtocart_post;
+		} else { 
+			$addcartbtntext = isset( $wps_deals_options['add_to_cart_text'] ) && !empty($wps_deals_options['add_to_cart_text']) 
+								? $wps_deals_options['add_to_cart_text'] : __( 'TO CART', 'wpsdeals' );
+		}
+		
+		//get the current product is in cart or not
+		$incart =$wps_deals_cart->item_in_cart($post->ID);	
+	
+if( isset($wps_deals_options['item_quantities']) && !empty($wps_deals_options['item_quantities']) && $wps_deals_options['item_quantities'] == '1') {
+	if($incart) { ?>
+		<input type="hidden" id="deals_id" name="wps_deals_id" class="deals-id" value="<?php echo $post->ID;?>" />
+		
+		<a href="<?php echo $checkouturl;?>" class="deals-checkout deals-button btn-big" style="display:block">
+			<?php echo apply_filters( 'wps_deals_view_cart_text', __( 'View Cart', 'wpsdeals' ) ); ?>
+		</a>
+	<?php } else { ?>
+		<a href="javascript:void(0);" class="deals-add-to-cart-button deals-button btn-big">
+			<?php echo apply_filters( 'wps_deals_add_to_cart_text', $addcartbtntext ) ;?>
+		</a>
+					
+		<input type="hidden" id="deals_id" name="wps_deals_id" class="deals-id" value="<?php echo $post->ID;?>" />
+					
+		<div class="deals-cart-process-show">
+			<img class="deals-cart-loader" src="<?php echo WPS_DEALS_URL.'includes/images/cart-loader.gif';?>"/>
+		</div>
+		
+		<a href="<?php echo $checkouturl;?>" class="deals-checkout deals-button btn-big">
+			<?php echo apply_filters( 'wps_deals_view_cart_text', __( 'View Cart', 'wpsdeals' ) ); ?>
+		</a>
+	<?php }	
+} else { ?>
+<div class="add_to_cart">
+	<a href="javascript:void(0);" class="deals-add-to-cart-button">
+		<span><?php echo $addcartbtntext;?></span>
+	</a>
+</div>				
+	<input type="hidden" id="deals_id" name="wps_deals_id" class="deals-id" value="<?php echo $post->ID;?>" />
+
+	<div class="deals-cart-process-show">
+		<img class="deals-cart-loader" src="<?php echo WPS_DEALS_URL.'includes/images/cart-loader.gif';?>"/>
+	</div>
+				
+	<a href="<?php echo $checkouturl;?>" class="deals-checkout deals-button btn-big">
+		<?php echo apply_filters( 'wps_deals_view_cart_text', __( 'View Cart', 'wpsdeals' ) ); ?>
+	</a>
+<?php }
+}
+/*********** End Add to cart on arctive page************/
+
+remove_action('wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_discount', 5 );
+add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_discounts_price', 5 );
+
+/*********** Start Discount********************/
+function wps_deals_home_more_deals_discounts_price()
+{
+
+global $post,$wps_deals_price;
+		
+		// get the discount
+		$discount = $wps_deals_price->wps_deals_get_discount( $post->ID );
+		
+		if(!empty($discount) && $discount != '0%') {
+			// set the args, which we will pass to the template
+	echo '<div class="deals-discount-box">
+	
+	<p class="ribon">
+		
+		'.$discount.' <span>OFF
+		</span>
+	</p>
+	
+</div>';
+		}
+}
+/*********** End Discount********************/
+
+function wps_deals_home_more_deals_see_deal_title()
+{
+global $post,$wps_deals_options,$wps_deals_price;
+		
+		// get the color scheme from the settings
+		$button_color = $wps_deals_options['deals_btn_color'];
+		$btncolor = ( isset( $button_color ) && !empty( $button_color ) ) ? $button_color : 'blue';
+		
+		$prefix = WPS_DEALS_META_PREFIX;
+		
+		$disable_price	= ( isset( $options['disable_price'] ) && $options['disable_price'] == 'true' ) ? true : false;
+		
+		if( !$disable_price ) {						
+				
+			// set the args, which we will pass to the template
+			$dealurl=get_permalink( $post->ID );
+			$btncolor=$btncolor;
+			?>
+			
+<div class="red deals-button btn-small">
+	<a href="<?php echo $dealurl;?>"><span>Details</span></a>
+</div>
+<?php }
 }
 
-/******************End 10-feb-2015*************/
 
+/************* 11 feb-2015****************/
+/******************End 12-feb-2015*************/
+
+/******************** 14feb-2015**********************/
 // Not working, but should be
 remove_action( 'geodir_sidebar_listings_top', 'geodir_action_geodir_sidebar_listings_top', 10 );
 add_action( 'geodir_sidebar_listings_top', 'geodir_action_geodir_sidebar_listings_top_new', 10 );
@@ -324,14 +535,44 @@ remove_action( 'wps_deals_single_header_left', 'wps_deals_single_deal_price', 5 
 add_action( 'wps_deals_home_more_deals_content', 'pts_deal_ratings', 17 );
 add_action( 'wps_deals_home_more_deals_content', 'pts_deal_description', 22 );
 
-function pts_deal_ratings() {
+/*function pts_deal_ratings() {
+	
 	if( empty( $rating ) ) return; ?>
 	<div class="deals-rating-label">
 		<?php apply_filters( 'wps_deals_rating_text', __( 'Customer Rating', 'wpsdeals' ) ); ?>
 	</div>
 	<?php
+}*/
+/******************** 14feb-2015**********************/
+/************** Start 12-02-2015 rating**********/
+function pts_deal_ratings() {
+	
+if( class_exists('Wps_Fbre_Model')) 
+		{ // check if the social review engine plugin is activated
+			
+			global $post,$wps_fbre_model;
+			
+			$rating = round( $wps_fbre_model->wps_fbre_post_average_ratings( $args = array( 'post_id' => $post->ID ) ) );
+			if( empty( $rating ) ) return;
+?>
+	
+<div class="deals-rating deals-col-12">
+	
+	<div class="deals-rating-label">
+		<?php apply_filters( 'wps_deals_rating_text', __( 'Customer Rating', 'wpsdeals' ) ); ?>
+	</div>
+		
+	<div class="review-star wps-fbre-stars_<?php echo $rating;?>stars"></div>
+		
+</div>
+		<?php }
+		else{?><div class="review-star wps-fbre-stars_<?php echo $rating;?>stars">No rating yet</div><?php }
 }
+
+/******************end************************/
 /*********Date 10-02-15 add class************/
+/******************** end 14feb-2015**********************/
+
 function pts_deal_description() {
 	echo '<div class="deal_description">';
 	the_excerpt();

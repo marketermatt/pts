@@ -128,11 +128,12 @@ a:hover{
     width: 100% !important;
     height: auto;
 }
+/*******11-02-2015*********/
+#top-footer-ads {
+  border-top: 1px solid #c6c6c6;
 
-#top-footer-ads{
-    border-top: 5px solid #ccc;
 }
-
+/******* end 11-02-2015*********/
 #footer-area{
     background: #1f1f1f;
     border-top: 5px solid #ff0000;
@@ -621,6 +622,7 @@ div.rotatingtweet p{
     font-family: 'MyriadProBoldCond';
     text-align: center;
     margin: 0;
+	color:#535353;
 }
 
 .post-list{
@@ -691,8 +693,13 @@ div.rotatingtweet p{
     margin:0 0 1px 0;
 }
 
-.title-area{
+/*.title-area{
     border-bottom: 5px solid #ccc;
+    margin-bottom: 20px;
+    padding: 25px 0;
+}
+*/
+.title-area{
     margin-bottom: 20px;
     padding: 25px 0;
 }
@@ -917,7 +924,7 @@ a img.aligncenter {
   border-bottom: 1px solid #ebebeb;
 }
 
-/********Start Date 10-feb-2015**********************/
+/********Start Date 14-feb-2015**********************/
 /****** Geo Directory new css added here******/
 
 
@@ -1102,14 +1109,15 @@ h3.deals-more-title a{ color:#505050 !important; font-size:24px; text-align:cent
 
 .deals-home.small .deals-more-content .deals-more-price-box span, .deals-archive.small .deals-more-content .deals-more-price-box span{  color:#2f2f2f; font-size:30px !important; padding:0px 0px 0px 10px;}
 
-.deals-button{ border-radius:0px !important; -moz-border-radius:0px; -webkit-border-radius:0px; background:#2f2f2f !important; padding:5px 15px !important; font-size:18px !important; color:#fff; text-transform:uppercase;}
-.deals-button:hover{ background:#cb0101 !important;}
+.deals-button{ border-radius:0px !important; -moz-border-radius:0px; -webkit-border-radius:0px; background:url(../images/detail_icon.png) no-repeat 5px 6px #2f2f2f !important; padding:5px 15px 5px 30px !important; font-size:18px !important; color:#fff; text-transform:uppercase;}
+.deals-button:hover{ background:url(../images/detail_icon.png) no-repeat 5px 6px #cb0101 !important;}
 
 .deals-row a.deals-add-to-cart-button{ background:url(../images/basket.png) no-repeat right 5px #ce4d39 !important; color:#fff; font-size:30px !important; text-align:left !important;}
 #sde.deals-single p.deals-dime-sale-title{ background:none !important; border:none !important; font-family: 'MyriadProBoldCond'; color:#2f2f2f !important; font-size:30px !important; text-transform:uppercase;}
 .deals-value-single{ color:#c6c6c6 !important; border-right:1px solid #c6c6c6 !important;}
-p.deals-value-title{ color:#c6c6c6 !important;}
+p.deals-value-title{ color:#c6c6c6 !important; font-size:16px !important;}
 p.deals-value{ color:#c6c6c6 !important;}
+p.deals-value span{ font-size:16px !important; font-weight:700 !important;}
 
 .deals-discount-single{ border-right:1px solid #c6c6c6;}
 p.deals-discount-title{ color:#c6c6c6;}
@@ -1131,3 +1139,85 @@ p.deals-bought{ color:#fff;}
 
 /********* Ebd Deals page css****************************/
 /********End Date 10-feb-2015**********************/
+/*************** date 11 feb************************/
+#top-footer-ads .container{
+padding:15px;
+}
+.content-area {
+  border-right: 1px solid #d3d3d3;
+}
+
+.deals-more-content .deals-more-discount-box{ right:5px !important; left:0px !important; position:absolute !important;}
+.deal-sidebar{ float:right; padding:0px;}
+.deals-after-title{ display:inline-block; vertical-align:top;}
+.deals-after-title a{ display:inline-block; padding:5px;}
+.deals-more-content{ width:100%;}
+.deals-more-content p.deals-value-title{ color:#fff !important; font-size:13px !important;}
+.deals-more-content p.deals-value del{ color:#fff !important; font-size:16px !important; color:#fff !important;}
+.deals-more-content p.deals-discount span{ font-size:16px !important; font-weight:normal !important; line-height:16px !important;}
+.deals-more-content p.deals-save{ font-size:16px; color:#fff !important;}
+.deals-more-content p.deals-save-title{ font-size:13px; color:#fff !important;}
+.deals-more-content p.deals-discount-title{ color:#fff !important; font-size:13px !important;}
+.deals-google-map-single{ overflow:visible !important;}
+.deals-timer-home-list{ color:#c60000; font-size:14px; padding:0px 15px;}
+.review-star{ width:100%; text-align:center;}
+p.ribon{ background:url(../images/ribbon.png) no-repeat; width:93px; margin:0px; height:45px; display:inline-block; position:absolute; right:-5px; font-size:23px; color:#fdcf05; font-family: 'MyriadProBoldCond';  padding:15px 10px 5px 10px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+p.ribon span{ color:#fff;}
+p.deals-more-price-special span{ color:#2f2f2f !important; font-size:26px !important;}
+.add_to_cart{ display:inline-block !important; padding:0px; margin:20px 0px 0px 10px !important;}
+.add_to_cart a.deals-add-to-cart-button{ display:inline-block; background:url(../images/add_to_cart.png) no-repeat #cb0101 5px !important;  margin:0px !important; padding:7px 15px 7px 35px !important; font-size:18px !important;}
+.add_to_cart a.deals-add-to-cart-button span{ display:inline-block; padding:0px 0px 0px 0px !important;  font-size:20px;}
+.deals-archive-top p.deals-result-count{ text-align:center; width:100% !important; font-weight:700; color:#c90200; text-transform:uppercase;}
+.deals-row .deals-available-single, .deals-row .deals-bought-single{ margin:0px 8px !important;}
+.deals-dicount-box{ display:inline-block !important; border-left:1px solid #c6c6c6 !important; border-right:none !important; border-bottom:none !important; border-top:none !important; background:#2f2f2f !important; width:33% !important; border-radius:0px !important;  box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.deals-dicount-box p{ line-height:25px !important;}
+.deals-dicount-box p.deals-discount-title{ color:#c6c6c6 !important; font-size:16px !important; text-align:center; margin:0px !important; padding:0px !important;}
+.deals-dicount-box p.deals-discount{ line-height:25px !important; font-size:16px !important;}
+.deals-dicount-box p.deals-discount span{ font-size:16px !important; color:#c6c6c6 !important; text-align:center; font-weight:700 !important;  margin:0px !important; padding:0px !important; line-height:25px !important;}
+
+.deals-value-box{ border:none !important; border-radius:0px !important; background:#2f2f2f !important; width:33% !important;  margin-left:0px !important; display:inline-block !important;  margin-right:0px !important; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+.deals-value-box p{ line-height:25px !important; font-size:16px !important; }
+
+.deals-save-box{ border-right:none !important; border-bottom:none !important; border-top:none !important; border-left:1px solid #fff !important; border-radius:0px !important; background:#2f2f2f !important; width:33% !important;  margin-left:0px !important; display:inline-block !important;  margin-right:0px !important; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; }
+.deals-save-box p{ line-height:25px !important; font-size:16px !important; }
+.deals-save-box p.deals-save-title{ color:#c6c6c6 !important;}
+.deals-save-box p.deals-save{ color:#c6c6c6 !important;}
+.deals-save-box p.deals-save span{ color:#c6c6c6 !important; font-weight:700 !important;}
+.sidebar-widgs{  vertical-align:top;}
+.sidebar-widgs h5.widgets_titles_sidebar{ margin:0px;}
+
+/***************End*********************************/
+
+/******** Star rating ***********************************/
+
+.hreview-aggregate .star-rating{margin:10px 0 0 0}
+#review_form #respond{position:static;margin:0;width:auto;padding:0 0 0;background:transparent none;border:0}
+#review_form #respond:after{content:"";display:block;clear:both}
+#review_form #respond p{margin:0 0 10px}
+#review_form #respond .form-submit input{left:auto}
+#review_form #respond textarea{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%}
+p.stars{ display:inline-block; padding:0px 5px;}
+p.stars:after{content:"";display:block;clear:both}
+p.stars span{ height:18px;position:relative; display:inline-block;}
+p.stars span a{ /*position:absolute;left:0;top:0;*/ display:inline-block; width:16px;height:0;padding-top:16px; /*overflow:hidden*/}
+p.stars span a:hover,p.stars span a:focus{}
+p.stars span a.active{}
+p.stars span a.star-1{width:16px;z-index:10; display:inline-block;}
+p.stars span a.star-2{width:32px;z-index:9}
+p.stars span a.star-3{width:48px;z-index:8}
+p.stars span a.star-4{width:64px;z-index:7}
+p.stars span a.star-5{width:80px;z-index:6} 
+.star-rating span:before, ul.products li.product .product-details .star-rating:before {
+content:none;
+} 
+.breadcrumbs{}
+.breadcrumbs a{ color:#fff;}
+.breadcrumbs span.current{ color:#efc205;}
+.deals-desc{ padding:0px !important;}
+.deals-img{}
+.deals-img img{ max-width:100% !important;}
+.deals-row{ margin:0px !important; padding:0px; box-sizing:border-box !important; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}
+.deals-row h2.deals-title{ font-size:28px; font-family: 'MyriadProBoldCond';}
+
+.deals-navdeal { font-family: 'MyriadProBoldCond'; }
+/***************End 14 feb**************************/

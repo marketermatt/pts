@@ -1,8 +1,7 @@
 <?php
     get_header();
 ?>
-<div class="content_back">
-<div class='title-area'>
+<div class='content_back title-area'>
     <h2 class="page-title"><?php echo single_cat_title(); ?></h2>
 </div>
 
@@ -15,6 +14,5 @@
             <?php get_sidebar(); ?>
         </div>
     </div>
-</div>
 </div>
 <?php get_footer(); ?>

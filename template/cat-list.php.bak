@@ -10,9 +10,7 @@
                         <div class="clearfix"></div>
                         <span>Posted on: <?php the_date(); ?></span> <?php echo do_shortcode('[display_rating_result post_id="'.get_the_ID().'" show_rich_snippets="true" show_count="false"]'); ?>
                         <div class="hr"></div>
-                        <?php //get_template_part('template/post','format'); 
-						get_template_part( 'content', get_post_format() );
-						?>
+                        <?php get_template_part('template/post','format'); ?>
                         <?php
                             $comment_count = wp_count_comments( post_id );
                             $catlist='';

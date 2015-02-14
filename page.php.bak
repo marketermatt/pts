@@ -9,7 +9,7 @@
  */
 
 get_header(); ?>
-<div class="content_back"> <div class="title-area">
+<div class='content_back title-area'>
     <h2 class="page-title"><?php the_title(); ?></h2>
 </div>
 <div class="container-wrap">
@@ -28,6 +28,5 @@ get_header(); ?>
             <?php get_sidebar(); ?>
         </div>
     </div>
-</div>
 </div>
 <?php get_footer(); ?>

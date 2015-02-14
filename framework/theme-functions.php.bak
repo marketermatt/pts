@@ -5,23 +5,93 @@
  * Date: 1/6/15
  * Time: 12:20 PM
  */
+ /******************10-feb-2015*************/
 /********************* Apply Geo hook for geo directory*********************/
 
-remove_action('geodir_listings_before_main_content','geodir_breadcrumb', 20);
 remove_action('geodir_wrapper_open','geodir_action_wrapper_open',10,3);	
 add_action( 'geodir_wrapper_open', 'geo_action_wrapper_open', 10, 3 );
 function geo_action_wrapper_open()
 {
 	echo "<div class='content_back'><div class='geo_wrapper_open'>";
-	}
+}
 remove_action('geodir_wrapper_close','geodir_action_wrapper_close',10,1);	
 add_action( 'geodir_wrapper_close', 'geo_action_wrapper_close', 10,1);
 function geo_action_wrapper_close()
 {
-	echo "</div></div>";
-	}
+	echo "</div><!-- END geo_wrapper_open --></div><!-- END content_back --></div>";
+}
 
-/********************* End Apply Geo hook for geo directory*********************/
+
+/************** 10 feb 2015 remove BREADCRUMB********************/
+remove_action( 'geodir_detail_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action('geodir_listings_before_main_content','geodir_breadcrumb', 20);
+remove_action( 'geodir_author_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_search_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_home_before_main_content', 'geodir_breadcrumb', 20 );
+remove_action( 'geodir_location_before_main_content', 'geodir_breadcrumb', 20 );
+/******************End remove BREADCRUMB*******************************/
+
+/*********Remove left sidebar on geo ditectory templates pages*********/
+remove_action( 'geodir_author_sidebar_left', 'geodir_action_author_sidebar_left', 10 );
+remove_action('geodir_home_sidebar_left', 'geodir_action_home_sidebar_left', 10 );
+remove_action( 'geodir_listings_sidebar_left', 'geodir_action_listings_sidebar_left', 10 );
+remove_action( 'geodir_location_sidebar_left', 'geodir_action_home_sidebar_left', 10 );
+remove_action( 'geodir_search_sidebar_left', 'geodir_action_search_sidebar_left', 10 );
+
+if (get_option('geodir_detail_sidebar_left_section') ) {
+	remove_action( 'geodir_detail_sidebar', 'geodir_action_details_sidebar', 10 );
+	}
+// Swap deals_timer,see_deal,deals_price and deals_title sides of the deal page
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_timer', 15 );
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_title', 20 );
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_deal', 25 );
+	remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_price', 30 );
+
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_timer', 20 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_title', 15 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_see_deal', 30 );
+	add_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_price', 25 );	
+	/***********End Swap********************************************************************/
+/*******************End************************************************/
+
+/************** 10 feb 2015 Start use deals tempaltes hooks********************/
+
+remove_action( 'wps_deals_before_main_content', 'wps_deals_output_content_wrapper', 10 );
+add_action( 'wps_deals_before_main_content', 'wps_deal_output_content_wrapper', 10 );
+
+function wps_deal_output_content_wrapper()
+{
+echo "<div class='content_back'><div class='geo_wrapper_open'>";
+}
+
+add_action( 'wp_head', 'remove_quotes');
+function remove_quotes()
+{
+
+/*echo '<script type="text/javascript">
+jQuery(function(){
+var catstr=jQuery(".entry-header h1.entry-title").text();
+var reptitle=catstr.replace(/'/g,'');
+jQuery(".entry-header h1.entry-title").text(reptitle).show();
+});
+
+</script>';*/
+}
+
+/******************End 10-feb-2015*************/
+
+// Not working, but should be
+remove_action( 'geodir_sidebar_listings_top', 'geodir_action_geodir_sidebar_listings_top', 10 );
+add_action( 'geodir_sidebar_listings_top', 'geodir_action_geodir_sidebar_listings_top_new', 10 );
+function geodir_action_geodir_sidebar_listings_top_new(){
+	 if(get_option('geodir_show_listing_top_section')) { ?>
+    <h1>Hello</h1><div class="geodir_full_page clearfix">
+   	    <?php dynamic_sidebar('geodir_listing_top');?>
+    <?php } 
+	
+}
+
+
 
 add_filter('show_admin_bar', '__return_false');
 add_theme_support( 'post-thumbnails' );
@@ -39,45 +109,8 @@ function pts_post_type() {
         )
     );
 
-    add_image_size( 'blog-gallery-thumb', 165, 210, true ); // (cropped)
-
-   /* $labels = array(
-		'name'                => _x( 'Projects', 'Post Type General Name', PTS_DOMAIN ),
-		'singular_name'       => _x( 'Project', 'Post Type Singular Name', PTS_DOMAIN ),
-		'menu_name'           => __( 'Projects', PTS_DOMAIN ),
-		'parent_item_colon'   => __( 'Parent Item:', PTS_DOMAIN ),
-		'all_items'           => __( 'All Projects', PTS_DOMAIN ),
-		'view_item'           => __( 'View Project', PTS_DOMAIN ),
-		'add_new_item'        => __( 'Add New Project', PTS_DOMAIN ),
-		'add_new'             => __( 'Add New', PTS_DOMAIN ),
-		'edit_item'           => __( 'Edit Item', PTS_DOMAIN ),
-		'update_item'         => __( 'Update Item', PTS_DOMAIN ),
-		'search_items'        => __( 'Search Project', PTS_DOMAIN ),
-		'not_found'           => __( 'Not found', PTS_DOMAIN ),
-		'not_found_in_trash'  => __( 'Not found in Trash', PTS_DOMAIN ),
-	);
-	$args = array(
-		'label'               => __( 'project', PTS_DOMAIN ),
-		'description'         => __( 'Your Projects', PTS_DOMAIN ),
-		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions', ),
-		'taxonomies'          => array( 'category', 'post_tag' ),
-		'hierarchical'        => false,
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 20,
-		'menu_icon'           => 'dashicons-images-alt',
-		'can_export'          => true,
-		'has_archive'         => true,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-        'query_var'           => 'project',
-		'capability_type'     => 'page',
-	);
-	register_post_type( 'pts_project', $args );*/
+    add_image_size( 'blog-gallery-thumb', 165, 210, true );
+    add_image_size( 'deal-shortcode-display', 260, 200, true);
 }
 
 add_action( 'after_setup_theme', 'pts_theme_features' );
@@ -91,47 +124,6 @@ function pts_theme_features() {
 
 if ( ! isset( $content_width ) )
 	$content_width = 800;
-
-/*function homepage_colums(){
-    $elstart = '<div class="row home-colums"><div class="container">';
-    $elend = '</div></div>';
-        $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-1">
-                <div class="icon-area">
-                      <i class="fa '.ot_get_option('pts_homepage_column_sections_sec_1_icon').' fa-3x" style="color:#fff;"></i>
-                </div>
-                <div class="colum-text">
-                    '.ot_get_option('pts_homepage_column_sections_sec_1').'
-                </div>
-                <div class="button-area-1">
-                    '.do_shortcode('[button title="'.ot_get_option('pts_homepage_column_sections_sec_1_btn').'" href="'.ot_get_option('pts_homepage_column_sections_sec_1_link').'"]').'
-                </div>
-        </div>';
-
-    $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-2">
-                <div class="icon-area">
-                      <i class="fa '.ot_get_option('pts_homepage_column_sections_sec_2_icon').' fa-3x" style="color:#fff;"></i>
-                </div>
-                <div class="colum-text">
-                    '.ot_get_option('pts_homepage_column_sections_sec_2').'
-                </div>
-                <div class="button-area-2">
-                    '.do_shortcode('[button title="'.ot_get_option('pts_homepage_column_sections_sec_2_btn').'" href="'.ot_get_option('pts_homepage_column_sections_sec_2_link').'"]').'
-                </div>
-        </div>';
-    $returns .= '<div class="col-xs-12 col-sm-4 col-md-4 homepage-column-3">
-                <div class="icon-area">
-                      <i class="fa '.ot_get_option('pts_homepage_column_sections_sec_3_icon').' fa-3x" style="color:#fff;"></i>
-                </div>
-                <div class="colum-text">
-                    '.ot_get_option('pts_homepage_column_sections_sec_3').'
-                </div>
-                <div class="button-area-3">
-                    '.do_shortcode('[button title="'.ot_get_option('pts_homepage_column_sections_sec_3_btn').'" href="'.ot_get_option('pts_homepage_column_sections_sec_3_link').'"]').'
-                </div>
-        </div>';
-
-    return $elstart.$returns.$elend;
-}*/
 
 function pts_main_wrap() {
    return 'container-fluid no-15';
@@ -247,7 +239,7 @@ if(!function_exists('pts_comments')) {
     }
 }
 
-/* Adding and Rearranging Deal Page */
+/********************* REARRANGE SINGLE DEAL PAGE *********************/
 
 // Add new image size
 add_action ('init', 'add_new_deal_image_size');
@@ -255,12 +247,15 @@ function add_new_deal_image_size() {
 	add_image_size( 'new-deal-image', 750, 375);
 }
 
+/********Date 10-02-2015 active this hooks for shoing the image on deals page***********/
 // Replace old image with new one
 remove_action( 'wps_deals_single_header_right', 'wps_deals_single_deal_img', 10);
 add_action( 'wps_deals_single_header_right', 'get_new_deal_image', 10);
 
 remove_action( 'wps_deals_home_more_deals_content', 'wps_deals_home_more_deals_image', 10);
-// add_action( 'wps_deals_home_more_deals_content', 'get_new_deal_image', 10);
+add_action( 'wps_deals_home_more_deals_content', 'get_new_deal_image', 10);
+
+/******** End Date 10-02-2015 active this hooks for shoing the image on deals page***********/
 
 // Add sidebars for deal single and deal archive
 function add_deal_widget_areas() {
@@ -303,6 +298,10 @@ add_action( 'wps_deals_single_header_left', 'wps_deals_social_buttons', 40 );
 add_action ( 'wps_deals_single_content', 'display_single_deal_sidebar', 12);
 add_action ( 'wps_deals_single_content', 'display_archive_deal_sidebar', 12 );
 
+// Move description to the header section
+remove_action( 'wps_deals_single_content', 'wps_deals_single_description', 10 );
+add_action( 'wps_deals_single_header_right', 'wps_deals_single_description', 40 ); 
+
 function display_single_deal_sidebar() { ?>
 	<ul class="deal-sidebar col-xs-12 col-sm-4 col-md-4 deal-details">
       <?php
@@ -332,10 +331,13 @@ function pts_deal_ratings() {
 	</div>
 	<?php
 }
-
+/*********Date 10-02-15 add class************/
 function pts_deal_description() {
+	echo '<div class="deal_description">';
 	the_excerpt();
+	echo '</div>';
 }
+/*********End Date 10-02-15 add class************/
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
@@ -682,5 +684,26 @@ function get_post_format_contents(){
         echo $shortcode;
     }
 }
+
+function is_in_url($string='')
+{
+    if($string == '')
+        return;
+
+    $url = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+    if (false !== strpos($url,$string)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function get_cart_area(){
+    global $wps_deals_cart;
+    $cartdata = $wps_deals_cart->get();
+    $cartdata = $cartdata['products'];
+    return count($cartdata);
+}
+
 
 ?>
