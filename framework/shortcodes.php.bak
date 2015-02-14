@@ -258,19 +258,18 @@ function pts_local_joes_shortcode_function($atts, $content = null) {
     while ( $the_query->have_posts() ) : $the_query->the_post();
         $buy_button_behaviour = get_post_meta(get_the_ID(),'_wps_deals_behavior',true);
 
-		$deal_id = get_the_ID();
-
         if($buy_button_behaviour == 'direct')
         {
             $dealbutton = '<a href="?dealsaction=buynow&dealid='.get_the_ID().'"><div class="btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> Buy Now</div></a>';
         }
         else{
-            $dealbutton = "<a onclick='add_deal_home($deal_id)' href='javascript:void(0);'><div class='btn btn-fill btn-accent-color fa fa-shopping-cart' style='margin-left:10px;margin-bottom:10px; font-size:10px;'> To Cart</div></a>";
+            $dealbutton = '<a href="javascript:void(0);"><div class="deals-add-to-cart-button btn btn-fill btn-accent-color fa fa-shopping-cart" style="margin-left:10px;margin-bottom:10px; font-size:10px;"> To Cart</div></a>';
             $dealbutton .= '<input type="hidden" id="deals_id" name="wps_deals_id" class="deals-id" value="199">';
-            $dealbutton .= "<div class='deals-cart-process-show' id='deals-cart-process-show_$deal_id'>";
-			$dealbutton .= "<img class='deals-cart-loader' id='deals-cart-loader_$deal_id' src='".home_url()."/wp-content/plugins/deals-engine/includes/images/cart-loader.gif'>	</div>"; 
+            $dealbutton .= '<div class="deals-cart-process-show">
+		<img class="deals-cart-loader" src="'.home_url().'/wp-content/plugins/deals-engine/includes/images/cart-loader.gif">
+	</div>
 
-	$dealbutton .='<a href="'.home_url().'/social-deals-checkout/" id="deals-checkout_'.$deal_id.'" class="deals-checkout red deals-button btn-big">
+	<a href="'.home_url().'/social-deals-checkout/" class="deals-checkout red deals-button btn-big">
 		View Cart	</a>';
 
         }

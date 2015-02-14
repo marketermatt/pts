@@ -1221,3 +1221,51 @@ content:none;
 
 .deals-navdeal { font-family: 'MyriadProBoldCond'; }
 /***************End 14 feb**************************/
+
+/********End Date 10-feb-2015**********************/
+
+/*css for widget styles 10-2-2015 by Gagan*/
+.widget_search,.widget_recent_entries,.widget_recent_comments,.widget_meta,.widget_archive{width:100%; border:solid 1px #c5c5c5;}
+
+.widget_search h2.widgettitle{ background-color: #333333;color: #ffffff;    font-family: Myriad Pro;font-size: 29px;font-weight: normal;margin: 0 !important;
+    padding:10px 7px 10px 25px;text-transform: uppercase;width: 100%;}
+	
+.widget_search .form-group{width:100%;}	
+
+.widget_search .form-group .form-control{ border: 1px solid #c5c5c5;
+    margin: 10px 0 10px 10px;width: 78%;background-color:#e6e6e6;font-family: Arial;font-size: 15px;color:#686868;text-transform: uppercase;}
+.form-control::-webkit-input-placeholder { color:    #686868;}
+.form-control:-moz-placeholder {color:    #686868;opacity:  1;}
+.form-control::-moz-placeholder {color:    #686868; opacity:  1;}
+.form-control:-ms-input-placeholder {color:    #686868;}
+
+/* code for Recent Posts*/
+.widget_recent_entries h2.widgettitle{ background-color: #d32e2e;color: #ffffff;    font-family: Myriad Pro;font-size: 29px;font-weight: normal;margin: 0 !important; padding:10px 7px 10px 25px;text-transform: uppercase;width: 100%;}
+
+.widget_recent_entries ul{margin:10px 0px 10px 0px;}	
+.widget_recent_entries ul li{ list-style: inside none square;font-family:Arial
+;font-size:15px;}
+
+.widget_recent_entries ul li a,span{ color:#636363;font-family:Arial
+;font-size:15px;font-weight:normal;}
+
+
+/* css for recent comments*/
+.widget_recent_comments ul{margin:10px 0px 10px 0px;}
+.widget_recent_comments ul li{ list-style: inside none square;font-family:Arial;font-size:15px;}
+
+.widget_recent_comments h2.widgettitle{ background-color: #d32e2e;color: #ffffff;    font-family: Myriad Pro;font-size: 29px;font-weight: normal;margin: 0 !important; padding:10px 7px 10px 25px;text-transform: uppercase;width: 100%;}
+
+.widget_recent_comments ul li a,span{ color:#636363;font-family:Arial
+;font-size:15px;font-weight:normal;}
+
+
+/* css for meta widget*/ 
+.widget_meta h2.widgettitle{ background-color: #d32e2e;color: #ffffff;    font-family: Myriad Pro;font-size: 29px;font-weight: normal;margin: 0 !important; padding:10px 7px 10px 25px;text-transform: uppercase;width: 100%;}
+
+.widget_meta ul{margin:10px 0px 10px 0px;}
+.widget_meta ul li{ list-style: inside none square;font-family:Arial;font-size:15px;}
+.widget_meta ul li a{ color:#636363;font-family:Arial
+;font-size:15px;font-weight:normal;}
+
+/*css for */
